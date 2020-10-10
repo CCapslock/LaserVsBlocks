@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 public class MainGameController : MonoBehaviour
 {
 	public SingleBlock[] BlocksForMovement;
+	public BalancePreset CurrentBalancePreset;
 	public int Column = 7;
 	public int Row = 15;
 
@@ -13,6 +14,7 @@ public class MainGameController : MonoBehaviour
 	private SingleBlocksMovementController _blocksMovementController;
 	private ScoreController _scoreController;
 	private SpawnController _spawnController;
+	private BalanceController _balanceController;
 	private bool _blocksIsMoving;
 	private bool _needChecking;
 	private void Awake()
@@ -22,10 +24,19 @@ public class MainGameController : MonoBehaviour
 		_blocksMovementController = GetComponent<SingleBlocksMovementController>();
 		_scoreController = GetComponent<ScoreController>();
 		_gameField = GetComponent<GameField>();
+		_balanceController = new BalanceController();
 
+		//настройка BalanceController'а и стартового баланса
+		_balanceController.GameController = this;
+		_balanceController.CurrentBalancePreset = CurrentBalancePreset;
+		_balanceController.SetCorrectBalance(0);
+		_scoreController.NumForBalanceChecking = CurrentBalancePreset.DifferenceBetweenLvls + 1;
+		SetCorrectBalance();
 
+		//настройка сцены и SpawnController'а
 		_sceneCreator.BuildScene(Row, Column);
 		_spawnController.CreateSpawnPoints(_sceneCreator.CreateSpawnPoints(Row, Column), Column, Row);
+		_spawnController.GlobalMaxHp = CurrentBalancePreset.GlobalMaxHp;
 		_spawnController.CreatePoolOfSingleBlocks();
 	}
 	private void Start()
@@ -78,6 +89,11 @@ public class MainGameController : MonoBehaviour
 		_spawnController.SpawnFigure();
 		_needChecking = true;
 	}
+	public void SetCorrectBalance()
+	{
+		_spawnController.SetBlockPatterns(_balanceController.GetFigures());
+		_spawnController.SetHpRange(_balanceController.GetMinHp(), _balanceController.GetMaxHp());
+	}
 	//добавляет очки
 	public void AddScore(float AddingScore)
 	{
@@ -87,5 +103,10 @@ public class MainGameController : MonoBehaviour
 	public void ReturnBlockIntoPool(GameObject Block)
 	{
 		_spawnController.ReturnBlockIntoPool(Block);
+	}
+	// проверяет не пора ли повысить сложность
+	public void CheckForLvlUp(int CurrentScore)
+	{
+		_balanceController.SetCorrectBalance(CurrentScore);
 	}
 }

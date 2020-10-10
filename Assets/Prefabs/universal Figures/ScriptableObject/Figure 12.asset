@@ -17,7 +17,7 @@ MonoBehaviour:
     YCordinat: 0
   - XCordinat: 0
     YCordinat: 1
-  - XCordinat: 1
-    YCordinat: 0
-  - XCordinat: 1
-    YCordinat: 1
+  - XCordinat: 0
+    YCordinat: 2
+  - XCordinat: -1
+    YCordinat: 2

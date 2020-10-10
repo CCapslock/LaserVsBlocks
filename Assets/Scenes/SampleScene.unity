@@ -1161,6 +1161,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BlocksForMovement: []
+  CurrentBalancePreset: {fileID: 11400000, guid: 1a73a5026e4fad444a98d5a96132ec18,
+    type: 2}
   Column: 7
   Row: 15
 --- !u!114 &964961368
@@ -1774,7 +1776,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: dcc95cd10ade8184c8bba781b8a90518, type: 3}
-  m_Color: {r: 0.2264151, g: 0.3285421, b: 1, a: 0.7882353}
+  m_Color: {r: 0.20392156, g: 0.3585815, b: 1, a: 0.7882353}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

@@ -8,6 +8,7 @@ public class SingleBlock : MonoBehaviour
 	public Gradient HealthGradient;
 	public ParticleSystem DestroyParticle;
 	public LayerMask SingleBlockLayer;
+	public float MaxHealthPoint;
 	public float HealthPoints;
 	public float SideRaycastLength;
 	public float LaserPower;
@@ -31,7 +32,7 @@ public class SingleBlock : MonoBehaviour
 		_blockCollider = GetComponent<Collider2D>();
 		_healthPointsText = gameObject.GetComponentInChildren<Text>();
 		_blockSpriteRenderer = GetComponent<SpriteRenderer>();
-		_blockSpriteRenderer.color = HealthGradient.Evaluate(Mathf.Floor(HealthPoints) / 50);
+		_blockSpriteRenderer.color = HealthGradient.Evaluate(Mathf.Floor(HealthPoints) / MaxHealthPoint);
 		_gameController = FindObjectOfType<MainGameController>();
 		_destroyPosition = new Vector2();
 		DestroyParticle.Stop();
@@ -87,14 +88,14 @@ public class SingleBlock : MonoBehaviour
 		_gameController.CheckForSpawning();
 	}
 	//активирует блок для спавна
-	public void ActivateBlockForSpawn()
+	public void ActivateBlockForSpawn(float MinHp, float MaxHp)
 	{
 		if (_blockCollider != null)
 		{
 			_blockCollider.enabled = true;
 		}
-		HealthPoints = Random.Range(36, 50);
-		_blockSpriteRenderer.color = HealthGradient.Evaluate(Mathf.Floor(HealthPoints) / 50);
+		HealthPoints = Random.Range(MinHp, MaxHp);
+		_blockSpriteRenderer.color = HealthGradient.Evaluate(Mathf.Floor(HealthPoints) / MaxHealthPoint);
 		CanGetDamage = true;
 		_healthPointsText.text = (Mathf.Floor(HealthPoints)).ToString();
 		CanMove = true;
@@ -154,7 +155,7 @@ public class SingleBlock : MonoBehaviour
 				DestroyBlock();
 			}
 			_healthPointsText.text = (Mathf.Floor(HealthPoints)).ToString();
-			_blockSpriteRenderer.color = HealthGradient.Evaluate(Mathf.Floor(HealthPoints) / 50);
+			_blockSpriteRenderer.color = HealthGradient.Evaluate(Mathf.Floor(HealthPoints) / MaxHealthPoint);
 		}
 	}
 	public void SetEffectOn(bool NeedToOn)
