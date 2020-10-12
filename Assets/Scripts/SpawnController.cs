@@ -5,6 +5,7 @@ public class SpawnController : MonoBehaviour
     public GameObject _singleBlockPrefab;
     public SingleBlock _singleBlockForActivation;
     public CreateFigure[] _blockPatterns;
+    public float GlobalMaxHp;
 
     private GameObject[] _blocksGameObjects;
     private GameObject[] _singleBlockPool;
@@ -12,6 +13,8 @@ public class SpawnController : MonoBehaviour
     private Vector2 _spawnPosition;
     private Vector2 _farPosition;
     private Vector2 _notfarPosition;
+    private float _maxHp;
+    private float _minHp;
     private int _counter;
     private int _columnNum;
     private int _column;
@@ -25,6 +28,29 @@ public class SpawnController : MonoBehaviour
         _spawnPosition = new Vector2();
         _column = Column;
         _row = Row;
+    }
+    public void SetHpRange(float MinHp, float MaxHp)
+    {
+        _minHp = MinHp;
+        _maxHp = MaxHp;
+    }
+    public void SetBlockPatterns(FigureWithWeightForSpawner[] FiguresWithWeight)
+    {
+        int WeightOfAllFigures = 0;
+        for (int i = 0; i < FiguresWithWeight.Length; i++)
+        {
+            WeightOfAllFigures += FiguresWithWeight[i].Weight;
+        }
+        _blockPatterns = new CreateFigure[WeightOfAllFigures];
+        int ArrayNum = 0;
+        for (int i = 0; i < FiguresWithWeight.Length; i++)
+        {
+            for (int j = 0; j < FiguresWithWeight[i].Weight; j++)
+            {
+                _blockPatterns[ArrayNum] = FiguresWithWeight[i].Figure;
+                ArrayNum++;
+            }
+        }
     }
     //спавнит фигуры
     public void SpawnFigure()
@@ -59,7 +85,7 @@ public class SpawnController : MonoBehaviour
             _spawnPosition = _spawnPoints[RandomFigure.SingleBlocks[i].YCordinat, _columnNum + RandomFigure.SingleBlocks[i].XCordinat];
             _blocksGameObjects[i].transform.position = _spawnPosition;
             _singleBlockForActivation = _blocksGameObjects[i].GetComponent<SingleBlock>();
-            _singleBlockForActivation.ActivateBlockForSpawn();
+            _singleBlockForActivation.ActivateBlockForSpawn(_minHp, _maxHp);
 
             //_blocksGameObjects[i] = Instantiate(_singleBlockPrefab, _spawnPoints[RandomFigure.SingleBlocks[i].YCordinat, _columnNum + RandomFigure.SingleBlocks[i].XCordinat],Quaternion.identity);
         }
@@ -80,7 +106,7 @@ public class SpawnController : MonoBehaviour
         _farPosition = new Vector2(10, 10);
         _notfarPosition = new Vector2(9, 9);
         GameObject SingleBlockForChanging = Instantiate(_singleBlockPrefab, _farPosition, Quaternion.identity);
-        SingleBlockForChanging = ScaleBlock(SingleBlockForChanging);
+        SingleBlockForChanging = ChangeBlock(SingleBlockForChanging);
         _singleBlockPool = new GameObject[_column * (_row - 1)];
         _singleBlockPool[0] = SingleBlockForChanging;
         for (int i = 1; i < _column * (_row - 1); i++)
@@ -90,14 +116,15 @@ public class SpawnController : MonoBehaviour
 
     }
     //изменяет размер Блока перед созданием пула
-    private GameObject ScaleBlock(GameObject Block)
+    private GameObject ChangeBlock(GameObject Block)
     {
+        SingleBlock BlockScript = Block.GetComponent<SingleBlock>();
+        BlockScript.MaxHealthPoint = GlobalMaxHp;
         return Block;
     }
     //возвращает блок в пул
     public void ReturnBlockIntoPool(GameObject Block)
     {
-        SingleBlock BlockScript = Block.GetComponent<SingleBlock>();
         for (int j = 0; j < _singleBlockPool.Length; j++)
         {
             if (_singleBlockPool[j] == null)

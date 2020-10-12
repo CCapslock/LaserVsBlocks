@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Figure 22
   m_EditorClassIdentifier: 
   SingleBlocks:
-  - XCordinat: -1
+  - XCordinat: 0
+    YCordinat: 0
+  - XCordinat: 0
     YCordinat: 1
   - XCordinat: -1
     YCordinat: 0
-  - XCordinat: 0
-    YCordinat: 0
-  - XCordinat: 1
-    YCordinat: 0
+  - XCordinat: -1
+    YCordinat: 1
   - XCordinat: 1
     YCordinat: 1
