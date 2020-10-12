@@ -1,0 +1,703 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cf52407f27d3564b9ace76d35e39d68, type: 3}
+  m_Name: BalanceController v0.1
+  m_EditorClassIdentifier: 
+  DifferenceBetweenLvls: 500
+  GlobalMaxHp: 60
+  Lvls:
+  - MaxScore: 500
+    MaxHp: 25
+    MinHp: 15
+    Figures:
+    - Figure: {fileID: 11400000, guid: 263d309e46492df4fa718caaf0754839, type: 2}
+      Weight: 4
+    - Figure: {fileID: 11400000, guid: bcf5df9012964f7458b619c9a1e19ab7, type: 2}
+      Weight: 4
+    - Figure: {fileID: 11400000, guid: 6415a5dd3fec1cb419e624dd29a057ea, type: 2}
+      Weight: 4
+    - Figure: {fileID: 11400000, guid: 9aa3eec70579fd34fa6a7d679a99879f, type: 2}
+      Weight: 4
+    - Figure: {fileID: 11400000, guid: a1ff2ef2156ecba4a91ab10b76b3687e, type: 2}
+      Weight: 4
+    - Figure: {fileID: 11400000, guid: d810ad5f51d199e4fb36df0e1247d2e5, type: 2}
+      Weight: 4
+    - Figure: {fileID: 11400000, guid: e601bda19f64c8242ab97327128ccb93, type: 2}
+      Weight: 2
+    - Figure: {fileID: 11400000, guid: 9cae0d0ec9e56ef4c918ce0784306757, type: 2}
+      Weight: 2
+    - Figure: {fileID: 11400000, guid: 116824300bb787746b07937ae67a8ef5, type: 2}
+      Weight: 2
+    - Figure: {fileID: 11400000, guid: 764cf746cca7d424ea4ee5b57e591a21, type: 2}
+      Weight: 2
+    - Figure: {fileID: 11400000, guid: a1256f32aa7cc6f469df4a332ba9d2cc, type: 2}
+      Weight: 2
+    - Figure: {fileID: 11400000, guid: c904acd2367fb7545becad545b3eeac3, type: 2}
+      Weight: 2
+    - Figure: {fileID: 11400000, guid: b14bbffc721f0144195d9f50d6b49620, type: 2}
+      Weight: 2
+    - Figure: {fileID: 11400000, guid: d156abcce4ec5de41979e9dea3204462, type: 2}
+      Weight: 2
+    - Figure: {fileID: 11400000, guid: 684e72708c028e741b60585c03ca45a7, type: 2}
+      Weight: 2
+    - Figure: {fileID: 11400000, guid: 769632d00da4f29449458bb910be56b2, type: 2}
+      Weight: 2
+    - Figure: {fileID: 11400000, guid: f7501d13b1ca0e14987455f0ec6b34e0, type: 2}
+      Weight: 2
+    - Figure: {fileID: 11400000, guid: a17f5abe823f89245a75526c218b85c0, type: 2}
+      Weight: 2
+    - Figure: {fileID: 11400000, guid: 33064aaee7f995941b1edeae04569de2, type: 2}
+      Weight: 12
+    - Figure: {fileID: 11400000, guid: 577e3f9fbe3c1914d9c17def12977bbf, type: 2}
+      Weight: 12
+    - Figure: {fileID: 11400000, guid: c9b549d034ee4784b81144ac78c9e390, type: 2}
+      Weight: 3
+    - Figure: {fileID: 11400000, guid: d5049b4bd5768d64aa29a5079e54a19f, type: 2}
+      Weight: 3
+    - Figure: {fileID: 11400000, guid: 294fd9faed2e0224ea9522f2cc2675f4, type: 2}
+      Weight: 3
+    - Figure: {fileID: 11400000, guid: 5afb3d8160c7838438f68f40e6226852, type: 2}
+      Weight: 3
+    - Figure: {fileID: 11400000, guid: 9aa0fb1e76a6b484b999ce2e6f2d3e9a, type: 2}
+      Weight: 24
+    - Figure: {fileID: 11400000, guid: 5242e44d5581f474abe212b3db0badd3, type: 2}
+      Weight: 6
+    - Figure: {fileID: 11400000, guid: da05a74ba88b8d24c8a22beea152d330, type: 2}
+      Weight: 6
+    - Figure: {fileID: 11400000, guid: f90fd0d4998fa024481ed5e2c1903a0b, type: 2}
+      Weight: 6
+    - Figure: {fileID: 11400000, guid: f9684775917ab3b45a4cc3c74d8108f0, type: 2}
+      Weight: 6
+    - Figure: {fileID: 11400000, guid: 0b6af64243b420140affa41b5c3430ba, type: 2}
+      Weight: 4
+    - Figure: {fileID: 11400000, guid: eebe7dc8e8b59074a9dc7b9aaf0f2240, type: 2}
+      Weight: 4
+    - Figure: {fileID: 11400000, guid: 7e667291f689f104e95b21f7e2f3a534, type: 2}
+      Weight: 6
+    - Figure: {fileID: 11400000, guid: 25d34428d9bc8d646b58e31d843da4a2, type: 2}
+      Weight: 6
+    - Figure: {fileID: 11400000, guid: c5d8b557bb3c4ad40b93f9f1aad0fc17, type: 2}
+      Weight: 4
+    - Figure: {fileID: 11400000, guid: abbf4ab237ef8634da72693d2d04236e, type: 2}
+      Weight: 4
+    - Figure: {fileID: 11400000, guid: dc53fc2cedd1f3f459df9565a6230c9f, type: 2}
+      Weight: 6
+    - Figure: {fileID: 11400000, guid: 7558e350517192846ab1478586bd82b8, type: 2}
+      Weight: 6
+    - Figure: {fileID: 11400000, guid: 1d84424b2fad4a4459003d9a9ea9193b, type: 2}
+      Weight: 3
+    - Figure: {fileID: 11400000, guid: 4f0c596d5706da44c9c62c0f599fcf99, type: 2}
+      Weight: 3
+    - Figure: {fileID: 11400000, guid: 76c897d354f193b42b875b3e288d030d, type: 2}
+      Weight: 3
+    - Figure: {fileID: 11400000, guid: 9bb698b69bbc3b54188ee3de373bafdc, type: 2}
+      Weight: 3
+    - Figure: {fileID: 11400000, guid: 1bca1462ba65e9740a288fe403ceb889, type: 2}
+      Weight: 3
+    - Figure: {fileID: 11400000, guid: 2f10f42afa9bf3941b8a6e9b97ca0ad5, type: 2}
+      Weight: 3
+    - Figure: {fileID: 11400000, guid: b78ef2679c75b8b41a52dbdcf7458fd9, type: 2}
+      Weight: 3
+    - Figure: {fileID: 11400000, guid: 4347d97e7b6ddd84fa9666f9ba6902ec, type: 2}
+      Weight: 3
+    - Figure: {fileID: 11400000, guid: cc70c866b2c3bcb44a1b9397aacb802b, type: 2}
+      Weight: 4
+    - Figure: {fileID: 11400000, guid: 1effe1676f3c92845b45be39f1c2008b, type: 2}
+      Weight: 4
+  - MaxScore: 2000
+    MaxHp: 35
+    MinHp: 20
+    Figures:
+    - Figure: {fileID: 11400000, guid: 263d309e46492df4fa718caaf0754839, type: 2}
+      Weight: 4
+    - Figure: {fileID: 11400000, guid: bcf5df9012964f7458b619c9a1e19ab7, type: 2}
+      Weight: 4
+    - Figure: {fileID: 11400000, guid: 6415a5dd3fec1cb419e624dd29a057ea, type: 2}
+      Weight: 4
+    - Figure: {fileID: 11400000, guid: 9aa3eec70579fd34fa6a7d679a99879f, type: 2}
+      Weight: 4
+    - Figure: {fileID: 11400000, guid: a1ff2ef2156ecba4a91ab10b76b3687e, type: 2}
+      Weight: 4
+    - Figure: {fileID: 11400000, guid: d810ad5f51d199e4fb36df0e1247d2e5, type: 2}
+      Weight: 4
+    - Figure: {fileID: 11400000, guid: e601bda19f64c8242ab97327128ccb93, type: 2}
+      Weight: 2
+    - Figure: {fileID: 11400000, guid: 9cae0d0ec9e56ef4c918ce0784306757, type: 2}
+      Weight: 2
+    - Figure: {fileID: 11400000, guid: 116824300bb787746b07937ae67a8ef5, type: 2}
+      Weight: 2
+    - Figure: {fileID: 11400000, guid: 764cf746cca7d424ea4ee5b57e591a21, type: 2}
+      Weight: 2
+    - Figure: {fileID: 11400000, guid: a1256f32aa7cc6f469df4a332ba9d2cc, type: 2}
+      Weight: 2
+    - Figure: {fileID: 11400000, guid: c904acd2367fb7545becad545b3eeac3, type: 2}
+      Weight: 2
+    - Figure: {fileID: 11400000, guid: b14bbffc721f0144195d9f50d6b49620, type: 2}
+      Weight: 2
+    - Figure: {fileID: 11400000, guid: d156abcce4ec5de41979e9dea3204462, type: 2}
+      Weight: 2
+    - Figure: {fileID: 11400000, guid: 684e72708c028e741b60585c03ca45a7, type: 2}
+      Weight: 2
+    - Figure: {fileID: 11400000, guid: 769632d00da4f29449458bb910be56b2, type: 2}
+      Weight: 2
+    - Figure: {fileID: 11400000, guid: f7501d13b1ca0e14987455f0ec6b34e0, type: 2}
+      Weight: 2
+    - Figure: {fileID: 11400000, guid: a17f5abe823f89245a75526c218b85c0, type: 2}
+      Weight: 2
+    - Figure: {fileID: 11400000, guid: 33064aaee7f995941b1edeae04569de2, type: 2}
+      Weight: 12
+    - Figure: {fileID: 11400000, guid: 577e3f9fbe3c1914d9c17def12977bbf, type: 2}
+      Weight: 12
+    - Figure: {fileID: 11400000, guid: c9b549d034ee4784b81144ac78c9e390, type: 2}
+      Weight: 3
+    - Figure: {fileID: 11400000, guid: d5049b4bd5768d64aa29a5079e54a19f, type: 2}
+      Weight: 3
+    - Figure: {fileID: 11400000, guid: 294fd9faed2e0224ea9522f2cc2675f4, type: 2}
+      Weight: 3
+    - Figure: {fileID: 11400000, guid: 5afb3d8160c7838438f68f40e6226852, type: 2}
+      Weight: 3
+    - Figure: {fileID: 11400000, guid: 9aa0fb1e76a6b484b999ce2e6f2d3e9a, type: 2}
+      Weight: 24
+    - Figure: {fileID: 11400000, guid: 5242e44d5581f474abe212b3db0badd3, type: 2}
+      Weight: 6
+    - Figure: {fileID: 11400000, guid: da05a74ba88b8d24c8a22beea152d330, type: 2}
+      Weight: 6
+    - Figure: {fileID: 11400000, guid: f90fd0d4998fa024481ed5e2c1903a0b, type: 2}
+      Weight: 6
+    - Figure: {fileID: 11400000, guid: f9684775917ab3b45a4cc3c74d8108f0, type: 2}
+      Weight: 6
+    - Figure: {fileID: 11400000, guid: 0b6af64243b420140affa41b5c3430ba, type: 2}
+      Weight: 4
+    - Figure: {fileID: 11400000, guid: eebe7dc8e8b59074a9dc7b9aaf0f2240, type: 2}
+      Weight: 4
+    - Figure: {fileID: 11400000, guid: 7e667291f689f104e95b21f7e2f3a534, type: 2}
+      Weight: 6
+    - Figure: {fileID: 11400000, guid: 25d34428d9bc8d646b58e31d843da4a2, type: 2}
+      Weight: 6
+    - Figure: {fileID: 11400000, guid: c5d8b557bb3c4ad40b93f9f1aad0fc17, type: 2}
+      Weight: 4
+    - Figure: {fileID: 11400000, guid: abbf4ab237ef8634da72693d2d04236e, type: 2}
+      Weight: 4
+    - Figure: {fileID: 11400000, guid: dc53fc2cedd1f3f459df9565a6230c9f, type: 2}
+      Weight: 6
+    - Figure: {fileID: 11400000, guid: 7558e350517192846ab1478586bd82b8, type: 2}
+      Weight: 6
+    - Figure: {fileID: 11400000, guid: 1d84424b2fad4a4459003d9a9ea9193b, type: 2}
+      Weight: 3
+    - Figure: {fileID: 11400000, guid: 4f0c596d5706da44c9c62c0f599fcf99, type: 2}
+      Weight: 3
+    - Figure: {fileID: 11400000, guid: 76c897d354f193b42b875b3e288d030d, type: 2}
+      Weight: 3
+    - Figure: {fileID: 11400000, guid: 9bb698b69bbc3b54188ee3de373bafdc, type: 2}
+      Weight: 3
+    - Figure: {fileID: 11400000, guid: 1bca1462ba65e9740a288fe403ceb889, type: 2}
+      Weight: 3
+    - Figure: {fileID: 11400000, guid: 2f10f42afa9bf3941b8a6e9b97ca0ad5, type: 2}
+      Weight: 3
+    - Figure: {fileID: 11400000, guid: b78ef2679c75b8b41a52dbdcf7458fd9, type: 2}
+      Weight: 3
+    - Figure: {fileID: 11400000, guid: 4347d97e7b6ddd84fa9666f9ba6902ec, type: 2}
+      Weight: 3
+    - Figure: {fileID: 11400000, guid: cc70c866b2c3bcb44a1b9397aacb802b, type: 2}
+      Weight: 4
+    - Figure: {fileID: 11400000, guid: 1effe1676f3c92845b45be39f1c2008b, type: 2}
+      Weight: 4
+  - MaxScore: 5000
+    MaxHp: 40
+    MinHp: 25
+    Figures:
+    - Figure: {fileID: 11400000, guid: 263d309e46492df4fa718caaf0754839, type: 2}
+      Weight: 4
+    - Figure: {fileID: 11400000, guid: bcf5df9012964f7458b619c9a1e19ab7, type: 2}
+      Weight: 4
+    - Figure: {fileID: 11400000, guid: 6415a5dd3fec1cb419e624dd29a057ea, type: 2}
+      Weight: 4
+    - Figure: {fileID: 11400000, guid: 9aa3eec70579fd34fa6a7d679a99879f, type: 2}
+      Weight: 4
+    - Figure: {fileID: 11400000, guid: a1ff2ef2156ecba4a91ab10b76b3687e, type: 2}
+      Weight: 4
+    - Figure: {fileID: 11400000, guid: d810ad5f51d199e4fb36df0e1247d2e5, type: 2}
+      Weight: 4
+    - Figure: {fileID: 11400000, guid: e601bda19f64c8242ab97327128ccb93, type: 2}
+      Weight: 2
+    - Figure: {fileID: 11400000, guid: 9cae0d0ec9e56ef4c918ce0784306757, type: 2}
+      Weight: 2
+    - Figure: {fileID: 11400000, guid: 116824300bb787746b07937ae67a8ef5, type: 2}
+      Weight: 2
+    - Figure: {fileID: 11400000, guid: 764cf746cca7d424ea4ee5b57e591a21, type: 2}
+      Weight: 2
+    - Figure: {fileID: 11400000, guid: a1256f32aa7cc6f469df4a332ba9d2cc, type: 2}
+      Weight: 2
+    - Figure: {fileID: 11400000, guid: c904acd2367fb7545becad545b3eeac3, type: 2}
+      Weight: 2
+    - Figure: {fileID: 11400000, guid: b14bbffc721f0144195d9f50d6b49620, type: 2}
+      Weight: 2
+    - Figure: {fileID: 11400000, guid: d156abcce4ec5de41979e9dea3204462, type: 2}
+      Weight: 2
+    - Figure: {fileID: 11400000, guid: 684e72708c028e741b60585c03ca45a7, type: 2}
+      Weight: 2
+    - Figure: {fileID: 11400000, guid: 769632d00da4f29449458bb910be56b2, type: 2}
+      Weight: 2
+    - Figure: {fileID: 11400000, guid: f7501d13b1ca0e14987455f0ec6b34e0, type: 2}
+      Weight: 2
+    - Figure: {fileID: 11400000, guid: a17f5abe823f89245a75526c218b85c0, type: 2}
+      Weight: 2
+    - Figure: {fileID: 11400000, guid: 33064aaee7f995941b1edeae04569de2, type: 2}
+      Weight: 12
+    - Figure: {fileID: 11400000, guid: 577e3f9fbe3c1914d9c17def12977bbf, type: 2}
+      Weight: 12
+    - Figure: {fileID: 11400000, guid: c9b549d034ee4784b81144ac78c9e390, type: 2}
+      Weight: 3
+    - Figure: {fileID: 11400000, guid: d5049b4bd5768d64aa29a5079e54a19f, type: 2}
+      Weight: 3
+    - Figure: {fileID: 11400000, guid: 294fd9faed2e0224ea9522f2cc2675f4, type: 2}
+      Weight: 3
+    - Figure: {fileID: 11400000, guid: 5afb3d8160c7838438f68f40e6226852, type: 2}
+      Weight: 3
+    - Figure: {fileID: 11400000, guid: 9aa0fb1e76a6b484b999ce2e6f2d3e9a, type: 2}
+      Weight: 24
+    - Figure: {fileID: 11400000, guid: 5242e44d5581f474abe212b3db0badd3, type: 2}
+      Weight: 6
+    - Figure: {fileID: 11400000, guid: da05a74ba88b8d24c8a22beea152d330, type: 2}
+      Weight: 6
+    - Figure: {fileID: 11400000, guid: f90fd0d4998fa024481ed5e2c1903a0b, type: 2}
+      Weight: 6
+    - Figure: {fileID: 11400000, guid: f9684775917ab3b45a4cc3c74d8108f0, type: 2}
+      Weight: 6
+    - Figure: {fileID: 11400000, guid: 0b6af64243b420140affa41b5c3430ba, type: 2}
+      Weight: 4
+    - Figure: {fileID: 11400000, guid: eebe7dc8e8b59074a9dc7b9aaf0f2240, type: 2}
+      Weight: 4
+    - Figure: {fileID: 11400000, guid: 7e667291f689f104e95b21f7e2f3a534, type: 2}
+      Weight: 6
+    - Figure: {fileID: 11400000, guid: 25d34428d9bc8d646b58e31d843da4a2, type: 2}
+      Weight: 6
+    - Figure: {fileID: 11400000, guid: c5d8b557bb3c4ad40b93f9f1aad0fc17, type: 2}
+      Weight: 4
+    - Figure: {fileID: 11400000, guid: abbf4ab237ef8634da72693d2d04236e, type: 2}
+      Weight: 4
+    - Figure: {fileID: 11400000, guid: dc53fc2cedd1f3f459df9565a6230c9f, type: 2}
+      Weight: 6
+    - Figure: {fileID: 11400000, guid: 7558e350517192846ab1478586bd82b8, type: 2}
+      Weight: 6
+    - Figure: {fileID: 11400000, guid: 1d84424b2fad4a4459003d9a9ea9193b, type: 2}
+      Weight: 3
+    - Figure: {fileID: 11400000, guid: 4f0c596d5706da44c9c62c0f599fcf99, type: 2}
+      Weight: 3
+    - Figure: {fileID: 11400000, guid: 76c897d354f193b42b875b3e288d030d, type: 2}
+      Weight: 3
+    - Figure: {fileID: 11400000, guid: 9bb698b69bbc3b54188ee3de373bafdc, type: 2}
+      Weight: 3
+    - Figure: {fileID: 11400000, guid: 1bca1462ba65e9740a288fe403ceb889, type: 2}
+      Weight: 3
+    - Figure: {fileID: 11400000, guid: 2f10f42afa9bf3941b8a6e9b97ca0ad5, type: 2}
+      Weight: 3
+    - Figure: {fileID: 11400000, guid: b78ef2679c75b8b41a52dbdcf7458fd9, type: 2}
+      Weight: 3
+    - Figure: {fileID: 11400000, guid: 4347d97e7b6ddd84fa9666f9ba6902ec, type: 2}
+      Weight: 3
+    - Figure: {fileID: 11400000, guid: cc70c866b2c3bcb44a1b9397aacb802b, type: 2}
+      Weight: 4
+    - Figure: {fileID: 11400000, guid: 1effe1676f3c92845b45be39f1c2008b, type: 2}
+      Weight: 4
+  - MaxScore: 10000
+    MaxHp: 43
+    MinHp: 30
+    Figures:
+    - Figure: {fileID: 11400000, guid: 263d309e46492df4fa718caaf0754839, type: 2}
+      Weight: 10
+    - Figure: {fileID: 11400000, guid: bcf5df9012964f7458b619c9a1e19ab7, type: 2}
+      Weight: 10
+    - Figure: {fileID: 11400000, guid: 6415a5dd3fec1cb419e624dd29a057ea, type: 2}
+      Weight: 10
+    - Figure: {fileID: 11400000, guid: 9aa3eec70579fd34fa6a7d679a99879f, type: 2}
+      Weight: 10
+    - Figure: {fileID: 11400000, guid: a1ff2ef2156ecba4a91ab10b76b3687e, type: 2}
+      Weight: 10
+    - Figure: {fileID: 11400000, guid: d810ad5f51d199e4fb36df0e1247d2e5, type: 2}
+      Weight: 10
+    - Figure: {fileID: 11400000, guid: e601bda19f64c8242ab97327128ccb93, type: 2}
+      Weight: 6
+    - Figure: {fileID: 11400000, guid: 9cae0d0ec9e56ef4c918ce0784306757, type: 2}
+      Weight: 6
+    - Figure: {fileID: 11400000, guid: 116824300bb787746b07937ae67a8ef5, type: 2}
+      Weight: 6
+    - Figure: {fileID: 11400000, guid: 764cf746cca7d424ea4ee5b57e591a21, type: 2}
+      Weight: 6
+    - Figure: {fileID: 11400000, guid: a1256f32aa7cc6f469df4a332ba9d2cc, type: 2}
+      Weight: 6
+    - Figure: {fileID: 11400000, guid: c904acd2367fb7545becad545b3eeac3, type: 2}
+      Weight: 6
+    - Figure: {fileID: 11400000, guid: b14bbffc721f0144195d9f50d6b49620, type: 2}
+      Weight: 6
+    - Figure: {fileID: 11400000, guid: d156abcce4ec5de41979e9dea3204462, type: 2}
+      Weight: 6
+    - Figure: {fileID: 11400000, guid: 684e72708c028e741b60585c03ca45a7, type: 2}
+      Weight: 6
+    - Figure: {fileID: 11400000, guid: 769632d00da4f29449458bb910be56b2, type: 2}
+      Weight: 6
+    - Figure: {fileID: 11400000, guid: f7501d13b1ca0e14987455f0ec6b34e0, type: 2}
+      Weight: 6
+    - Figure: {fileID: 11400000, guid: a17f5abe823f89245a75526c218b85c0, type: 2}
+      Weight: 6
+    - Figure: {fileID: 11400000, guid: 33064aaee7f995941b1edeae04569de2, type: 2}
+      Weight: 20
+    - Figure: {fileID: 11400000, guid: 577e3f9fbe3c1914d9c17def12977bbf, type: 2}
+      Weight: 20
+    - Figure: {fileID: 11400000, guid: c9b549d034ee4784b81144ac78c9e390, type: 2}
+      Weight: 10
+    - Figure: {fileID: 11400000, guid: d5049b4bd5768d64aa29a5079e54a19f, type: 2}
+      Weight: 10
+    - Figure: {fileID: 11400000, guid: 294fd9faed2e0224ea9522f2cc2675f4, type: 2}
+      Weight: 10
+    - Figure: {fileID: 11400000, guid: 5afb3d8160c7838438f68f40e6226852, type: 2}
+      Weight: 10
+    - Figure: {fileID: 11400000, guid: 9aa0fb1e76a6b484b999ce2e6f2d3e9a, type: 2}
+      Weight: 30
+    - Figure: {fileID: 11400000, guid: 5242e44d5581f474abe212b3db0badd3, type: 2}
+      Weight: 10
+    - Figure: {fileID: 11400000, guid: da05a74ba88b8d24c8a22beea152d330, type: 2}
+      Weight: 10
+    - Figure: {fileID: 11400000, guid: f90fd0d4998fa024481ed5e2c1903a0b, type: 2}
+      Weight: 10
+    - Figure: {fileID: 11400000, guid: f9684775917ab3b45a4cc3c74d8108f0, type: 2}
+      Weight: 10
+    - Figure: {fileID: 11400000, guid: 0b6af64243b420140affa41b5c3430ba, type: 2}
+      Weight: 12
+    - Figure: {fileID: 11400000, guid: eebe7dc8e8b59074a9dc7b9aaf0f2240, type: 2}
+      Weight: 12
+    - Figure: {fileID: 11400000, guid: 7e667291f689f104e95b21f7e2f3a534, type: 2}
+      Weight: 10
+    - Figure: {fileID: 11400000, guid: 25d34428d9bc8d646b58e31d843da4a2, type: 2}
+      Weight: 10
+    - Figure: {fileID: 11400000, guid: c5d8b557bb3c4ad40b93f9f1aad0fc17, type: 2}
+      Weight: 12
+    - Figure: {fileID: 11400000, guid: abbf4ab237ef8634da72693d2d04236e, type: 2}
+      Weight: 12
+    - Figure: {fileID: 11400000, guid: dc53fc2cedd1f3f459df9565a6230c9f, type: 2}
+      Weight: 10
+    - Figure: {fileID: 11400000, guid: 7558e350517192846ab1478586bd82b8, type: 2}
+      Weight: 10
+    - Figure: {fileID: 11400000, guid: 1d84424b2fad4a4459003d9a9ea9193b, type: 2}
+      Weight: 14
+    - Figure: {fileID: 11400000, guid: 4f0c596d5706da44c9c62c0f599fcf99, type: 2}
+      Weight: 14
+    - Figure: {fileID: 11400000, guid: 76c897d354f193b42b875b3e288d030d, type: 2}
+      Weight: 14
+    - Figure: {fileID: 11400000, guid: 9bb698b69bbc3b54188ee3de373bafdc, type: 2}
+      Weight: 14
+    - Figure: {fileID: 11400000, guid: 1bca1462ba65e9740a288fe403ceb889, type: 2}
+      Weight: 14
+    - Figure: {fileID: 11400000, guid: 2f10f42afa9bf3941b8a6e9b97ca0ad5, type: 2}
+      Weight: 14
+    - Figure: {fileID: 11400000, guid: b78ef2679c75b8b41a52dbdcf7458fd9, type: 2}
+      Weight: 14
+    - Figure: {fileID: 11400000, guid: 4347d97e7b6ddd84fa9666f9ba6902ec, type: 2}
+      Weight: 14
+    - Figure: {fileID: 11400000, guid: cc70c866b2c3bcb44a1b9397aacb802b, type: 2}
+      Weight: 10
+    - Figure: {fileID: 11400000, guid: 1effe1676f3c92845b45be39f1c2008b, type: 2}
+      Weight: 10
+  - MaxScore: 20000
+    MaxHp: 50
+    MinHp: 30
+    Figures:
+    - Figure: {fileID: 11400000, guid: 263d309e46492df4fa718caaf0754839, type: 2}
+      Weight: 10
+    - Figure: {fileID: 11400000, guid: bcf5df9012964f7458b619c9a1e19ab7, type: 2}
+      Weight: 10
+    - Figure: {fileID: 11400000, guid: 6415a5dd3fec1cb419e624dd29a057ea, type: 2}
+      Weight: 10
+    - Figure: {fileID: 11400000, guid: 9aa3eec70579fd34fa6a7d679a99879f, type: 2}
+      Weight: 10
+    - Figure: {fileID: 11400000, guid: a1ff2ef2156ecba4a91ab10b76b3687e, type: 2}
+      Weight: 10
+    - Figure: {fileID: 11400000, guid: d810ad5f51d199e4fb36df0e1247d2e5, type: 2}
+      Weight: 10
+    - Figure: {fileID: 11400000, guid: e601bda19f64c8242ab97327128ccb93, type: 2}
+      Weight: 6
+    - Figure: {fileID: 11400000, guid: 9cae0d0ec9e56ef4c918ce0784306757, type: 2}
+      Weight: 6
+    - Figure: {fileID: 11400000, guid: 116824300bb787746b07937ae67a8ef5, type: 2}
+      Weight: 6
+    - Figure: {fileID: 11400000, guid: 764cf746cca7d424ea4ee5b57e591a21, type: 2}
+      Weight: 6
+    - Figure: {fileID: 11400000, guid: a1256f32aa7cc6f469df4a332ba9d2cc, type: 2}
+      Weight: 6
+    - Figure: {fileID: 11400000, guid: c904acd2367fb7545becad545b3eeac3, type: 2}
+      Weight: 6
+    - Figure: {fileID: 11400000, guid: b14bbffc721f0144195d9f50d6b49620, type: 2}
+      Weight: 6
+    - Figure: {fileID: 11400000, guid: d156abcce4ec5de41979e9dea3204462, type: 2}
+      Weight: 6
+    - Figure: {fileID: 11400000, guid: 684e72708c028e741b60585c03ca45a7, type: 2}
+      Weight: 6
+    - Figure: {fileID: 11400000, guid: 769632d00da4f29449458bb910be56b2, type: 2}
+      Weight: 6
+    - Figure: {fileID: 11400000, guid: f7501d13b1ca0e14987455f0ec6b34e0, type: 2}
+      Weight: 6
+    - Figure: {fileID: 11400000, guid: a17f5abe823f89245a75526c218b85c0, type: 2}
+      Weight: 6
+    - Figure: {fileID: 11400000, guid: 33064aaee7f995941b1edeae04569de2, type: 2}
+      Weight: 20
+    - Figure: {fileID: 11400000, guid: 577e3f9fbe3c1914d9c17def12977bbf, type: 2}
+      Weight: 20
+    - Figure: {fileID: 11400000, guid: c9b549d034ee4784b81144ac78c9e390, type: 2}
+      Weight: 10
+    - Figure: {fileID: 11400000, guid: d5049b4bd5768d64aa29a5079e54a19f, type: 2}
+      Weight: 10
+    - Figure: {fileID: 11400000, guid: 294fd9faed2e0224ea9522f2cc2675f4, type: 2}
+      Weight: 10
+    - Figure: {fileID: 11400000, guid: 5afb3d8160c7838438f68f40e6226852, type: 2}
+      Weight: 10
+    - Figure: {fileID: 11400000, guid: 9aa0fb1e76a6b484b999ce2e6f2d3e9a, type: 2}
+      Weight: 30
+    - Figure: {fileID: 11400000, guid: 5242e44d5581f474abe212b3db0badd3, type: 2}
+      Weight: 10
+    - Figure: {fileID: 11400000, guid: da05a74ba88b8d24c8a22beea152d330, type: 2}
+      Weight: 10
+    - Figure: {fileID: 11400000, guid: f90fd0d4998fa024481ed5e2c1903a0b, type: 2}
+      Weight: 10
+    - Figure: {fileID: 11400000, guid: f9684775917ab3b45a4cc3c74d8108f0, type: 2}
+      Weight: 10
+    - Figure: {fileID: 11400000, guid: 0b6af64243b420140affa41b5c3430ba, type: 2}
+      Weight: 12
+    - Figure: {fileID: 11400000, guid: eebe7dc8e8b59074a9dc7b9aaf0f2240, type: 2}
+      Weight: 12
+    - Figure: {fileID: 11400000, guid: 7e667291f689f104e95b21f7e2f3a534, type: 2}
+      Weight: 10
+    - Figure: {fileID: 11400000, guid: 25d34428d9bc8d646b58e31d843da4a2, type: 2}
+      Weight: 10
+    - Figure: {fileID: 11400000, guid: c5d8b557bb3c4ad40b93f9f1aad0fc17, type: 2}
+      Weight: 12
+    - Figure: {fileID: 11400000, guid: abbf4ab237ef8634da72693d2d04236e, type: 2}
+      Weight: 12
+    - Figure: {fileID: 11400000, guid: dc53fc2cedd1f3f459df9565a6230c9f, type: 2}
+      Weight: 10
+    - Figure: {fileID: 11400000, guid: 7558e350517192846ab1478586bd82b8, type: 2}
+      Weight: 10
+    - Figure: {fileID: 11400000, guid: 1d84424b2fad4a4459003d9a9ea9193b, type: 2}
+      Weight: 14
+    - Figure: {fileID: 11400000, guid: 4f0c596d5706da44c9c62c0f599fcf99, type: 2}
+      Weight: 14
+    - Figure: {fileID: 11400000, guid: 76c897d354f193b42b875b3e288d030d, type: 2}
+      Weight: 14
+    - Figure: {fileID: 11400000, guid: 9bb698b69bbc3b54188ee3de373bafdc, type: 2}
+      Weight: 14
+    - Figure: {fileID: 11400000, guid: 1bca1462ba65e9740a288fe403ceb889, type: 2}
+      Weight: 14
+    - Figure: {fileID: 11400000, guid: 2f10f42afa9bf3941b8a6e9b97ca0ad5, type: 2}
+      Weight: 14
+    - Figure: {fileID: 11400000, guid: b78ef2679c75b8b41a52dbdcf7458fd9, type: 2}
+      Weight: 14
+    - Figure: {fileID: 11400000, guid: 4347d97e7b6ddd84fa9666f9ba6902ec, type: 2}
+      Weight: 14
+    - Figure: {fileID: 11400000, guid: cc70c866b2c3bcb44a1b9397aacb802b, type: 2}
+      Weight: 10
+    - Figure: {fileID: 11400000, guid: 1effe1676f3c92845b45be39f1c2008b, type: 2}
+      Weight: 10
+  - MaxScore: 30000
+    MaxHp: 50
+    MinHp: 35
+    Figures:
+    - Figure: {fileID: 11400000, guid: 263d309e46492df4fa718caaf0754839, type: 2}
+      Weight: 10
+    - Figure: {fileID: 11400000, guid: bcf5df9012964f7458b619c9a1e19ab7, type: 2}
+      Weight: 10
+    - Figure: {fileID: 11400000, guid: 6415a5dd3fec1cb419e624dd29a057ea, type: 2}
+      Weight: 10
+    - Figure: {fileID: 11400000, guid: 9aa3eec70579fd34fa6a7d679a99879f, type: 2}
+      Weight: 10
+    - Figure: {fileID: 11400000, guid: a1ff2ef2156ecba4a91ab10b76b3687e, type: 2}
+      Weight: 10
+    - Figure: {fileID: 11400000, guid: d810ad5f51d199e4fb36df0e1247d2e5, type: 2}
+      Weight: 10
+    - Figure: {fileID: 11400000, guid: e601bda19f64c8242ab97327128ccb93, type: 2}
+      Weight: 6
+    - Figure: {fileID: 11400000, guid: 9cae0d0ec9e56ef4c918ce0784306757, type: 2}
+      Weight: 6
+    - Figure: {fileID: 11400000, guid: 116824300bb787746b07937ae67a8ef5, type: 2}
+      Weight: 6
+    - Figure: {fileID: 11400000, guid: 764cf746cca7d424ea4ee5b57e591a21, type: 2}
+      Weight: 6
+    - Figure: {fileID: 11400000, guid: a1256f32aa7cc6f469df4a332ba9d2cc, type: 2}
+      Weight: 6
+    - Figure: {fileID: 11400000, guid: c904acd2367fb7545becad545b3eeac3, type: 2}
+      Weight: 6
+    - Figure: {fileID: 11400000, guid: b14bbffc721f0144195d9f50d6b49620, type: 2}
+      Weight: 6
+    - Figure: {fileID: 11400000, guid: d156abcce4ec5de41979e9dea3204462, type: 2}
+      Weight: 6
+    - Figure: {fileID: 11400000, guid: 684e72708c028e741b60585c03ca45a7, type: 2}
+      Weight: 6
+    - Figure: {fileID: 11400000, guid: 769632d00da4f29449458bb910be56b2, type: 2}
+      Weight: 6
+    - Figure: {fileID: 11400000, guid: f7501d13b1ca0e14987455f0ec6b34e0, type: 2}
+      Weight: 6
+    - Figure: {fileID: 11400000, guid: a17f5abe823f89245a75526c218b85c0, type: 2}
+      Weight: 6
+    - Figure: {fileID: 11400000, guid: 33064aaee7f995941b1edeae04569de2, type: 2}
+      Weight: 20
+    - Figure: {fileID: 11400000, guid: 577e3f9fbe3c1914d9c17def12977bbf, type: 2}
+      Weight: 20
+    - Figure: {fileID: 11400000, guid: c9b549d034ee4784b81144ac78c9e390, type: 2}
+      Weight: 10
+    - Figure: {fileID: 11400000, guid: d5049b4bd5768d64aa29a5079e54a19f, type: 2}
+      Weight: 10
+    - Figure: {fileID: 11400000, guid: 294fd9faed2e0224ea9522f2cc2675f4, type: 2}
+      Weight: 10
+    - Figure: {fileID: 11400000, guid: 5afb3d8160c7838438f68f40e6226852, type: 2}
+      Weight: 10
+    - Figure: {fileID: 11400000, guid: 9aa0fb1e76a6b484b999ce2e6f2d3e9a, type: 2}
+      Weight: 30
+    - Figure: {fileID: 11400000, guid: 5242e44d5581f474abe212b3db0badd3, type: 2}
+      Weight: 10
+    - Figure: {fileID: 11400000, guid: da05a74ba88b8d24c8a22beea152d330, type: 2}
+      Weight: 10
+    - Figure: {fileID: 11400000, guid: f90fd0d4998fa024481ed5e2c1903a0b, type: 2}
+      Weight: 10
+    - Figure: {fileID: 11400000, guid: f9684775917ab3b45a4cc3c74d8108f0, type: 2}
+      Weight: 10
+    - Figure: {fileID: 11400000, guid: 0b6af64243b420140affa41b5c3430ba, type: 2}
+      Weight: 12
+    - Figure: {fileID: 11400000, guid: eebe7dc8e8b59074a9dc7b9aaf0f2240, type: 2}
+      Weight: 12
+    - Figure: {fileID: 11400000, guid: 7e667291f689f104e95b21f7e2f3a534, type: 2}
+      Weight: 10
+    - Figure: {fileID: 11400000, guid: 25d34428d9bc8d646b58e31d843da4a2, type: 2}
+      Weight: 10
+    - Figure: {fileID: 11400000, guid: c5d8b557bb3c4ad40b93f9f1aad0fc17, type: 2}
+      Weight: 12
+    - Figure: {fileID: 11400000, guid: abbf4ab237ef8634da72693d2d04236e, type: 2}
+      Weight: 12
+    - Figure: {fileID: 11400000, guid: dc53fc2cedd1f3f459df9565a6230c9f, type: 2}
+      Weight: 10
+    - Figure: {fileID: 11400000, guid: 7558e350517192846ab1478586bd82b8, type: 2}
+      Weight: 10
+    - Figure: {fileID: 11400000, guid: 1d84424b2fad4a4459003d9a9ea9193b, type: 2}
+      Weight: 14
+    - Figure: {fileID: 11400000, guid: 4f0c596d5706da44c9c62c0f599fcf99, type: 2}
+      Weight: 14
+    - Figure: {fileID: 11400000, guid: 76c897d354f193b42b875b3e288d030d, type: 2}
+      Weight: 14
+    - Figure: {fileID: 11400000, guid: 9bb698b69bbc3b54188ee3de373bafdc, type: 2}
+      Weight: 14
+    - Figure: {fileID: 11400000, guid: 1bca1462ba65e9740a288fe403ceb889, type: 2}
+      Weight: 14
+    - Figure: {fileID: 11400000, guid: 2f10f42afa9bf3941b8a6e9b97ca0ad5, type: 2}
+      Weight: 14
+    - Figure: {fileID: 11400000, guid: b78ef2679c75b8b41a52dbdcf7458fd9, type: 2}
+      Weight: 14
+    - Figure: {fileID: 11400000, guid: 4347d97e7b6ddd84fa9666f9ba6902ec, type: 2}
+      Weight: 14
+    - Figure: {fileID: 11400000, guid: cc70c866b2c3bcb44a1b9397aacb802b, type: 2}
+      Weight: 10
+    - Figure: {fileID: 11400000, guid: 1effe1676f3c92845b45be39f1c2008b, type: 2}
+      Weight: 10
+  - MaxScore: 45000
+    MaxHp: 60
+    MinHp: 35
+    Figures:
+    - Figure: {fileID: 11400000, guid: 263d309e46492df4fa718caaf0754839, type: 2}
+      Weight: 10
+    - Figure: {fileID: 11400000, guid: bcf5df9012964f7458b619c9a1e19ab7, type: 2}
+      Weight: 10
+    - Figure: {fileID: 11400000, guid: 6415a5dd3fec1cb419e624dd29a057ea, type: 2}
+      Weight: 10
+    - Figure: {fileID: 11400000, guid: 9aa3eec70579fd34fa6a7d679a99879f, type: 2}
+      Weight: 10
+    - Figure: {fileID: 11400000, guid: a1ff2ef2156ecba4a91ab10b76b3687e, type: 2}
+      Weight: 10
+    - Figure: {fileID: 11400000, guid: d810ad5f51d199e4fb36df0e1247d2e5, type: 2}
+      Weight: 10
+    - Figure: {fileID: 11400000, guid: e601bda19f64c8242ab97327128ccb93, type: 2}
+      Weight: 6
+    - Figure: {fileID: 11400000, guid: 9cae0d0ec9e56ef4c918ce0784306757, type: 2}
+      Weight: 6
+    - Figure: {fileID: 11400000, guid: 116824300bb787746b07937ae67a8ef5, type: 2}
+      Weight: 6
+    - Figure: {fileID: 11400000, guid: 764cf746cca7d424ea4ee5b57e591a21, type: 2}
+      Weight: 6
+    - Figure: {fileID: 11400000, guid: a1256f32aa7cc6f469df4a332ba9d2cc, type: 2}
+      Weight: 6
+    - Figure: {fileID: 11400000, guid: c904acd2367fb7545becad545b3eeac3, type: 2}
+      Weight: 6
+    - Figure: {fileID: 11400000, guid: b14bbffc721f0144195d9f50d6b49620, type: 2}
+      Weight: 6
+    - Figure: {fileID: 11400000, guid: d156abcce4ec5de41979e9dea3204462, type: 2}
+      Weight: 6
+    - Figure: {fileID: 11400000, guid: 684e72708c028e741b60585c03ca45a7, type: 2}
+      Weight: 6
+    - Figure: {fileID: 11400000, guid: 769632d00da4f29449458bb910be56b2, type: 2}
+      Weight: 6
+    - Figure: {fileID: 11400000, guid: f7501d13b1ca0e14987455f0ec6b34e0, type: 2}
+      Weight: 6
+    - Figure: {fileID: 11400000, guid: a17f5abe823f89245a75526c218b85c0, type: 2}
+      Weight: 6
+    - Figure: {fileID: 11400000, guid: 33064aaee7f995941b1edeae04569de2, type: 2}
+      Weight: 20
+    - Figure: {fileID: 11400000, guid: 577e3f9fbe3c1914d9c17def12977bbf, type: 2}
+      Weight: 20
+    - Figure: {fileID: 11400000, guid: c9b549d034ee4784b81144ac78c9e390, type: 2}
+      Weight: 10
+    - Figure: {fileID: 11400000, guid: d5049b4bd5768d64aa29a5079e54a19f, type: 2}
+      Weight: 10
+    - Figure: {fileID: 11400000, guid: 294fd9faed2e0224ea9522f2cc2675f4, type: 2}
+      Weight: 10
+    - Figure: {fileID: 11400000, guid: 5afb3d8160c7838438f68f40e6226852, type: 2}
+      Weight: 10
+    - Figure: {fileID: 11400000, guid: 9aa0fb1e76a6b484b999ce2e6f2d3e9a, type: 2}
+      Weight: 30
+    - Figure: {fileID: 11400000, guid: 5242e44d5581f474abe212b3db0badd3, type: 2}
+      Weight: 10
+    - Figure: {fileID: 11400000, guid: da05a74ba88b8d24c8a22beea152d330, type: 2}
+      Weight: 10
+    - Figure: {fileID: 11400000, guid: f90fd0d4998fa024481ed5e2c1903a0b, type: 2}
+      Weight: 10
+    - Figure: {fileID: 11400000, guid: f9684775917ab3b45a4cc3c74d8108f0, type: 2}
+      Weight: 10
+    - Figure: {fileID: 11400000, guid: 0b6af64243b420140affa41b5c3430ba, type: 2}
+      Weight: 12
+    - Figure: {fileID: 11400000, guid: eebe7dc8e8b59074a9dc7b9aaf0f2240, type: 2}
+      Weight: 12
+    - Figure: {fileID: 11400000, guid: 7e667291f689f104e95b21f7e2f3a534, type: 2}
+      Weight: 10
+    - Figure: {fileID: 11400000, guid: 25d34428d9bc8d646b58e31d843da4a2, type: 2}
+      Weight: 10
+    - Figure: {fileID: 11400000, guid: c5d8b557bb3c4ad40b93f9f1aad0fc17, type: 2}
+      Weight: 12
+    - Figure: {fileID: 11400000, guid: abbf4ab237ef8634da72693d2d04236e, type: 2}
+      Weight: 12
+    - Figure: {fileID: 11400000, guid: dc53fc2cedd1f3f459df9565a6230c9f, type: 2}
+      Weight: 10
+    - Figure: {fileID: 11400000, guid: 7558e350517192846ab1478586bd82b8, type: 2}
+      Weight: 10
+    - Figure: {fileID: 11400000, guid: 1d84424b2fad4a4459003d9a9ea9193b, type: 2}
+      Weight: 14
+    - Figure: {fileID: 11400000, guid: 4f0c596d5706da44c9c62c0f599fcf99, type: 2}
+      Weight: 14
+    - Figure: {fileID: 11400000, guid: 76c897d354f193b42b875b3e288d030d, type: 2}
+      Weight: 14
+    - Figure: {fileID: 11400000, guid: 9bb698b69bbc3b54188ee3de373bafdc, type: 2}
+      Weight: 14
+    - Figure: {fileID: 11400000, guid: 1bca1462ba65e9740a288fe403ceb889, type: 2}
+      Weight: 14
+    - Figure: {fileID: 11400000, guid: 2f10f42afa9bf3941b8a6e9b97ca0ad5, type: 2}
+      Weight: 14
+    - Figure: {fileID: 11400000, guid: b78ef2679c75b8b41a52dbdcf7458fd9, type: 2}
+      Weight: 14
+    - Figure: {fileID: 11400000, guid: 4347d97e7b6ddd84fa9666f9ba6902ec, type: 2}
+      Weight: 14
+    - Figure: {fileID: 11400000, guid: cc70c866b2c3bcb44a1b9397aacb802b, type: 2}
+      Weight: 10
+    - Figure: {fileID: 11400000, guid: 1effe1676f3c92845b45be39f1c2008b, type: 2}
+      Weight: 10
