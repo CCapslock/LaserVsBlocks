@@ -5,6 +5,7 @@ public class SpawnController : MonoBehaviour
     public GameObject _singleBlockPrefab;
     public SingleBlock _singleBlockForActivation;
     public CreateFigure[] _blockPatterns;
+    public Gradient CurrentGradient;
     public float GlobalMaxHp;
 
     private GameObject[] _blocksGameObjects;
@@ -120,6 +121,7 @@ public class SpawnController : MonoBehaviour
     {
         SingleBlock BlockScript = Block.GetComponent<SingleBlock>();
         BlockScript.MaxHealthPoint = GlobalMaxHp;
+        BlockScript.HealthGradient = CurrentGradient;
         return Block;
     }
     //возвращает блок в пул
