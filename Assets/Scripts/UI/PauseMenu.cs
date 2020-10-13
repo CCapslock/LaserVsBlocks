@@ -13,6 +13,22 @@ public class PauseMenu : BaseMenu
     [SerializeField] private ButtonUI _buttonResume;
     [SerializeField] private ButtonUI _buttonRestart;
 
+    private UIController _uiController;
+
+    private void Start()
+    {
+        _uiController = GetComponentInParent<UIController>();
+
+        _buttonResume.GetControl.onClick.AddListener(delegate
+        {
+            _uiController.ResumeGame();
+        });
+        _buttonRestart.GetControl.onClick.AddListener(delegate
+        {
+            _uiController.RestartGame();
+        });
+    }
+
     public override void Hide()
     {
         if (!IsShow) return;

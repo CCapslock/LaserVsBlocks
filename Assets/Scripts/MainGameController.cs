@@ -45,8 +45,12 @@ public class MainGameController : MonoBehaviour
 		_singleBlocksInGame = new SingleBlock[Column * 15];
 		_singleBlocksInGame = FindObjectsOfType<SingleBlock>();
 		_blocksMovementController.FindAllSingleBlocks(_spawnController.GetSingleBlocksFromPool());
-		SpawnFigure();
 	}
+
+	public void StartGame()
+    {
+		SpawnFigure();
+    }
 	//проверяет нужно ли спавнить фигуру
 	public void CheckForSpawning()
 	{

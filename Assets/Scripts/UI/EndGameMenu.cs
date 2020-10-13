@@ -14,6 +14,18 @@ public class EndGameMenu : BaseMenu
     [Header("Buttons of EndGame Menu")]
     [SerializeField] private ButtonUI _buttonRestart;
 
+    private UIController _uiController;
+
+    private void Start()
+    {
+        _uiController = GetComponentInParent<UIController>();
+
+        _buttonRestart.GetControl.onClick.AddListener(delegate
+        {
+            _uiController.RestartGame();
+        });
+    }
+
     public override void Hide()
     {
         if (!IsShow) return;

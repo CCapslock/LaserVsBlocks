@@ -8,12 +8,20 @@ public class MainMenu : BaseMenu
     [Header ("Tap to start button")]
     [SerializeField] private ButtonUI _tapToStart;
 
+    private UIController _uiController;
+
     private Text _textTapToStart;
     private float _timer;
 
     private void Start()
     {
         _textTapToStart = _tapToStart.GetText();
+        _uiController = GetComponentInParent<UIController>();
+
+        _tapToStart.GetControl.onClick.AddListener(delegate
+        {
+            _uiController.StartGame();
+        });
     }
 
     private void Update()

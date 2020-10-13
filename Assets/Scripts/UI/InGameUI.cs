@@ -12,6 +12,18 @@ public class InGameUI : BaseMenu
     [Header("Pause button")]
     [SerializeField] private ButtonUI _pauseButton;
 
+    private UIController _uiController;
+
+    private void Start()
+    {
+        _uiController = GetComponentInParent<UIController>();
+
+        _pauseButton.GetControl.onClick.AddListener(delegate
+        {
+            _uiController.PauseGame();
+        });
+    }
+
     public override void Hide()
     {
         if (!IsShow) return;
