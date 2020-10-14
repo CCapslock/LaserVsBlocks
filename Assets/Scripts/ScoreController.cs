@@ -5,7 +5,8 @@ public class ScoreController : MonoBehaviour
 {
 	public Text CurrentScore;
 	public Text BestScore;
-	public int NumForBalanceChecking = 501;
+	public int NumForBalanceChecking;
+	public int CurrentLvl = 0;
 
 	private MainGameController _gameController;
 	private float _score;
@@ -17,7 +18,7 @@ public class ScoreController : MonoBehaviour
 		CurrentScore.text = "0";
 		_gameController = GetComponent<MainGameController>();
 	}
-	//добавляет очки
+	//добавляет очки за уничтожение блока лазером
 	public void AddScore(float AddingScore)
 	{
 		_score += AddingScore;
@@ -28,7 +29,22 @@ public class ScoreController : MonoBehaviour
 		CurrentScore.text = (Mathf.Floor(_score)).ToString();
 		if(_score >= _numFromLastChecking + NumForBalanceChecking)
 		{
-			Debug.Log("check");
+			_gameController.CheckForLvlUp((int)_score);
+			_numFromLastChecking += NumForBalanceChecking;
+		}
+
+	}
+	//добавляет очки за линии
+	public void AddScoreFromLine(float AddingScore)
+	{
+		_score += AddingScore * 2 * CurrentLvl;
+		if (_score > PlayerPrefs.GetFloat("BestScore"))
+		{
+			BestScore.text = "best: " + (Mathf.Floor(_score)).ToString();
+		}
+		CurrentScore.text = (Mathf.Floor(_score)).ToString();
+		if (_score >= _numFromLastChecking + NumForBalanceChecking)
+		{
 			_gameController.CheckForLvlUp((int)_score);
 			_numFromLastChecking += NumForBalanceChecking;
 		}

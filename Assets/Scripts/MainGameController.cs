@@ -101,13 +101,21 @@ public class MainGameController : MonoBehaviour
 	}
 	public void SetCorrectBalance()
 	{
+		_scoreController.CurrentLvl = _balanceController.GetCurrentLvlNum() + 1;
 		_spawnController.SetBlockPatterns(_balanceController.GetFigures());
 		_spawnController.SetHpRange(_balanceController.GetMinHp(), _balanceController.GetMaxHp());
 	}
 	//добавляет очки
-	public void AddScore(float AddingScore)
+	public void AddScore(float AddingScore, bool IsFromLine)
 	{
-		_scoreController.AddScore(AddingScore);
+		if (IsFromLine)
+		{
+			_scoreController.AddScoreFromLine(AddingScore);
+		}
+		else
+		{
+			_scoreController.AddScore(AddingScore);
+		}
 	}
 	//возвращает блок в массив
 	public void ReturnBlockIntoPool(GameObject Block)
