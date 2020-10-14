@@ -149,7 +149,7 @@ public class SingleBlock : MonoBehaviour
 		if (CanGetDamage)
 		{
 			HealthPoints -= LaserPower;
-			_gameController.AddScore(0.4f);
+			_gameController.AddScore(0.4f, false);
 			if (HealthPoints <= 1)
 			{
 				DestroyBlock();

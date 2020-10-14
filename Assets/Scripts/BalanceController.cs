@@ -2,15 +2,15 @@
 {
     public BalancePreset CurrentBalancePreset;
     public MainGameController GameController;
+    public int СurrentLvlNum = 0;
     private int _maxScore = 0;
-    private int _currentLvlNum = 0;
 
     public void SetCorrectBalance(int CurrentScore)
     {
         if(CurrentScore > _maxScore)
         {
-            _currentLvlNum++;
-            _maxScore = CurrentBalancePreset.Lvls[_currentLvlNum].MaxScore;
+            СurrentLvlNum++;
+            _maxScore = CurrentBalancePreset.Lvls[СurrentLvlNum].MaxScore;
             SetCorrectBalance(CurrentScore);
         }
         else
@@ -20,14 +20,18 @@
     }
     public FigureWithWeightForSpawner[] GetFigures()
     {
-        return CurrentBalancePreset.Lvls[_currentLvlNum].Figures;
+        return CurrentBalancePreset.Lvls[СurrentLvlNum].Figures;
     }
     public float GetMaxHp()
     {
-        return CurrentBalancePreset.Lvls[_currentLvlNum].MaxHp;
+        return CurrentBalancePreset.Lvls[СurrentLvlNum].MaxHp;
     }
     public float GetMinHp()
     {
-        return CurrentBalancePreset.Lvls[_currentLvlNum].MinHp;
+        return CurrentBalancePreset.Lvls[СurrentLvlNum].MinHp;
+    }
+    public int GetCurrentLvlNum()
+    {
+        return СurrentLvlNum;
     }
 }
