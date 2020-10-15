@@ -9,24 +9,29 @@ public class ScoreController : MonoBehaviour
 	public int CurrentLvl = 0;
 
 	private MainGameController _gameController;
+	private UIController _uiController;
 	private float _score;
+	private float _bestScore;
 	private int _numFromLastChecking = 0;
 
 	private void Start()
 	{
-		BestScore.text = "best: " + Mathf.Floor(PlayerPrefs.GetFloat("BestScore")).ToString();
-		CurrentScore.text = "0";
+		_bestScore = PlayerPrefs.GetFloat("BestScore");
 		_gameController = GetComponent<MainGameController>();
+		_uiController = FindObjectOfType<UIController>();
 	}
 	//добавляет очки за уничтожение блока лазером
 	public void AddScore(float AddingScore)
 	{
 		_score += AddingScore;
-		if (_score > PlayerPrefs.GetFloat("BestScore"))
+
+		if (_score > _bestScore)
 		{
-			BestScore.text = "best: " + (Mathf.Floor(_score)).ToString();
+			_bestScore = _score;
 		}
-		CurrentScore.text = (Mathf.Floor(_score)).ToString();
+
+		UpdateScore();
+
 		if(_score >= _numFromLastChecking + NumForBalanceChecking)
 		{
 			_gameController.CheckForLvlUp((int)_score);
@@ -50,6 +55,12 @@ public class ScoreController : MonoBehaviour
 		}
 
 	}
+	// Обновление количества очков в UI
+	public void UpdateScore()
+    {
+		_uiController.UpdateScoreUI(_score, _bestScore);
+    }
+
 	//запоминает лучший рекорд
 	public void RememberTheScore()
 	{
@@ -58,4 +69,13 @@ public class ScoreController : MonoBehaviour
 			PlayerPrefs.SetFloat("BestScore", _score);
 		}
 	}
+
+	public float GetCurrentScore()
+    {
+		return _score;
+    }
+	public float GetBestScore()
+    {
+		return _bestScore;
+    }
 }

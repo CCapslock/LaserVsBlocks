@@ -17,8 +17,10 @@ public class MainGameController : MonoBehaviour
 	private SpawnController _spawnController;
 	private ArtController _artController;
 	private BalanceController _balanceController;
+	private UIController _uiController;
 	private bool _blocksIsMoving;
 	private bool _needChecking;
+
 	private void Awake()
 	{
 		_sceneCreator = GetComponent<SceneCreator>();
@@ -28,6 +30,7 @@ public class MainGameController : MonoBehaviour
 		_gameField = GetComponent<GameField>();
 		_balanceController = new BalanceController();
 		_artController = new ArtController();
+		_uiController = FindObjectOfType<UIController>();
 
 		//настройка BalanceController'а и стартового баланса
 		_balanceController.GameController = this;
@@ -55,8 +58,13 @@ public class MainGameController : MonoBehaviour
 		_singleBlocksInGame = new SingleBlock[Column * 15];
 		_singleBlocksInGame = FindObjectsOfType<SingleBlock>();
 		_blocksMovementController.FindAllSingleBlocks(_spawnController.GetSingleBlocksFromPool());
-		SpawnFigure();
 	}
+
+	public void StartGame()
+    {
+		SpawnFigure();
+		_scoreController.UpdateScore();
+    }
 	//проверяет нужно ли спавнить фигуру
 	public void CheckForSpawning()
 	{
@@ -84,7 +92,7 @@ public class MainGameController : MonoBehaviour
 	{
 		if (_gameField.IsPlayerFail())
 		{
-			RestartGame();
+			_uiController.EndGame(Mathf.Floor(_scoreController.GetCurrentScore()), Mathf.Floor(_scoreController.GetBestScore()));
 		}
 	}
 	//перезапускает игру

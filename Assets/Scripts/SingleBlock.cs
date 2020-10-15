@@ -79,7 +79,7 @@ public class SingleBlock : MonoBehaviour
 		}
 		else
 		{
-			_gameController.RestartGame();
+			_gameController.CheckForSpawning();
 		}
 
 	}
