@@ -3,29 +3,32 @@ using UnityEngine.UI;
 
 public class ScoreController : MonoBehaviour
 {
-	public Text CurrentScore;
-	public Text BestScore;
 	public int NumForBalanceChecking = 501;
 
 	private MainGameController _gameController;
+	private UIController _uiController;
 	private float _score;
+	private float _bestScore;
 	private int _numFromLastChecking = 0;
 
 	private void Start()
 	{
-		BestScore.text = "best: " + Mathf.Floor(PlayerPrefs.GetFloat("BestScore")).ToString();
-		CurrentScore.text = "0";
+		_bestScore = PlayerPrefs.GetFloat("BestScore");
 		_gameController = GetComponent<MainGameController>();
+		_uiController = FindObjectOfType<UIController>();
 	}
 	//добавляет очки
 	public void AddScore(float AddingScore)
 	{
 		_score += AddingScore;
+
 		if (_score > PlayerPrefs.GetFloat("BestScore"))
 		{
-			BestScore.text = "best: " + (Mathf.Floor(_score)).ToString();
+			_bestScore = _score;
 		}
-		CurrentScore.text = (Mathf.Floor(_score)).ToString();
+
+		UpdateScore();
+
 		if(_score >= _numFromLastChecking + NumForBalanceChecking)
 		{
 			Debug.Log("check");
@@ -34,6 +37,12 @@ public class ScoreController : MonoBehaviour
 		}
 
 	}
+	// Обновление количества очков в UI
+	public void UpdateScore()
+    {
+		_uiController.UpdateScoreUI(_score, _bestScore);
+    }
+
 	//запоминает лучший рекорд
 	public void RememberTheScore()
 	{

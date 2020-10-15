@@ -1431,7 +1431,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 0000
+  m_Text: 
 --- !u!222 &711803402
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2354,8 +2354,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dab69965e77a08a46b464ce82e217510, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrentScore: {fileID: 909056559}
-  BestScore: {fileID: 861312339}
   NumForBalanceChecking: 501
 --- !u!114 &964961369
 MonoBehaviour:
@@ -3141,7 +3139,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: best:0000
+  m_Text: 
 --- !u!222 &1245073694
 CanvasRenderer:
   m_ObjectHideFlags: 0

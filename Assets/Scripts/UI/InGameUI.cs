@@ -38,9 +38,9 @@ public class InGameUI : BaseMenu
         IsShow = true;
     }
 
-    public void UpdateScore(int currentScore, int bestScore)
+    public void UpdateScore(float currentScore, float bestScore)
     {
-        _currentScore.SetText($"{currentScore}");
-        _bestScore.SetText($"best: {bestScore}");
+        _currentScore.SetText($"{Mathf.Floor(currentScore)}");
+        _bestScore.SetText($"best: {Mathf.Floor(bestScore)}");
     }
 }

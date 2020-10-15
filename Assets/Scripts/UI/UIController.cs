@@ -59,8 +59,8 @@ public class UIController : MonoBehaviour
 
     public void StartGame()
     {
-        _mainGameController.StartGame();
         SwitchUI(UIState.InGame);
+        _mainGameController.StartGame();
     }
     public void PauseGame()
     {
@@ -75,5 +75,9 @@ public class UIController : MonoBehaviour
     public void RestartGame()
     {
         _mainGameController.RestartGame();
+    }
+    public void UpdateScoreUI(float currentScore, float bestScore)
+    {
+        _inGameUI.UpdateScore(currentScore, bestScore);
     }
 }

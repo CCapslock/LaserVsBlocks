@@ -7,8 +7,13 @@ public class TextUI : MonoBehaviour
 {
     private Text _textUI;
 
+    private void Start()
+    {
+        _textUI = GetComponent<Text>();
+    }
+
     public void SetText(string text)
     {
-        _textUI.GetComponent<Text>().text = text;
+        _textUI.text = text;
     }
 }
