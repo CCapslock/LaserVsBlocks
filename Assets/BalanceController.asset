@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cf52407f27d3564b9ace76d35e39d68, type: 3}
   m_Name: BalanceController
   m_EditorClassIdentifier: 
-  DifferenceBetweenLvls: 1000
+  DifferenceBetweenLvls: 10000
   GlobalMaxHp: 50
   Lvls:
   - MaxScore: 1000
-    MaxHp: 30
+    MaxHp: 50
     MinHp: 20
     Figures:
     - Figure: {fileID: 11400000, guid: 263d309e46492df4fa718caaf0754839, type: 2}

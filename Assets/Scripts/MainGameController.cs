@@ -4,7 +4,8 @@ using UnityEngine.SceneManagement;
 public class MainGameController : MonoBehaviour
 {
 	public SingleBlock[] BlocksForMovement;
-	public BalancePreset CurrentBalancePreset;
+	public BalancePreset CurrentBalancePreset; 
+	public ArtPreset[] ArtPresets;
 	public int Column = 7;
 	public int Row = 15;
 
@@ -14,6 +15,7 @@ public class MainGameController : MonoBehaviour
 	private SingleBlocksMovementController _blocksMovementController;
 	private ScoreController _scoreController;
 	private SpawnController _spawnController;
+	private ArtController _artController;
 	private BalanceController _balanceController;
 	private bool _blocksIsMoving;
 	private bool _needChecking;
@@ -25,6 +27,7 @@ public class MainGameController : MonoBehaviour
 		_scoreController = GetComponent<ScoreController>();
 		_gameField = GetComponent<GameField>();
 		_balanceController = new BalanceController();
+		_artController = new ArtController();
 
 		//настройка BalanceController'а и стартового баланса
 		_balanceController.GameController = this;
@@ -33,10 +36,17 @@ public class MainGameController : MonoBehaviour
 		_scoreController.NumForBalanceChecking = CurrentBalancePreset.DifferenceBetweenLvls + 1;
 		SetCorrectBalance();
 
+		//настройка Artcontroller'a
+		_artController.ArtPresets = ArtPresets;
+		_artController.SelectPreset();
+		_artController.BackGroundGlowRenderer = GameObject.FindGameObjectWithTag("BackGroundGlow").GetComponent<SpriteRenderer>();
+		_artController.BackGroundGlowRenderer.color = _artController.GetCurrentColor();
+
 		//настройка сцены и SpawnController'а
 		_sceneCreator.BuildScene(Row, Column);
 		_spawnController.CreateSpawnPoints(_sceneCreator.CreateSpawnPoints(Row, Column), Column, Row);
 		_spawnController.GlobalMaxHp = CurrentBalancePreset.GlobalMaxHp;
+		_spawnController.CurrentGradient = _artController.GetCurrentGradient();
 		_spawnController.CreatePoolOfSingleBlocks();
 	}
 	private void Start()

@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - PlaceAbleBlock
+  - BackGroundGlow
   layers:
   - Default
   - TransparentFX
