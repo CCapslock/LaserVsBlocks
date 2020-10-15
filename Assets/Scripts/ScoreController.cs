@@ -3,7 +3,10 @@ using UnityEngine.UI;
 
 public class ScoreController : MonoBehaviour
 {
-	public int NumForBalanceChecking = 501;
+	public Text CurrentScore;
+	public Text BestScore;
+	public int NumForBalanceChecking;
+	public int CurrentLvl = 0;
 
 	private MainGameController _gameController;
 	private UIController _uiController;
