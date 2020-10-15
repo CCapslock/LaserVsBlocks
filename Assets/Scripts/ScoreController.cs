@@ -22,7 +22,7 @@ public class ScoreController : MonoBehaviour
 	{
 		_score += AddingScore;
 
-		if (_score > PlayerPrefs.GetFloat("BestScore"))
+		if (_score > _bestScore)
 		{
 			_bestScore = _score;
 		}
@@ -51,4 +51,13 @@ public class ScoreController : MonoBehaviour
 			PlayerPrefs.SetFloat("BestScore", _score);
 		}
 	}
+
+	public float GetCurrentScore()
+    {
+		return _score;
+    }
+	public float GetBestScore()
+    {
+		return _bestScore;
+    }
 }

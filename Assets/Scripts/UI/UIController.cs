@@ -74,7 +74,14 @@ public class UIController : MonoBehaviour
     }
     public void RestartGame()
     {
+        Time.timeScale = 1;
         _mainGameController.RestartGame();
+    }
+    public void EndGame(float currentScore, float bestScore)
+    {
+        SwitchUI(UIState.EndGame);
+        Time.timeScale = 0;
+        _endGameMenu.FinalScore(currentScore, bestScore);
     }
     public void UpdateScoreUI(float currentScore, float bestScore)
     {

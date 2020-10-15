@@ -7,7 +7,7 @@ public class TextUI : MonoBehaviour
 {
     private Text _textUI;
 
-    private void Start()
+    private void Awake()
     {
         _textUI = GetComponent<Text>();
     }

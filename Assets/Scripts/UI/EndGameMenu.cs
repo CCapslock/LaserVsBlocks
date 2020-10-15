@@ -10,11 +10,13 @@ public class EndGameMenu : BaseMenu
     [SerializeField] private TextUI _headerEndGame;
     [SerializeField] private TextUI _currentScore;
     [SerializeField] private TextUI _bestScore;
+    [SerializeField] private TextUI _newRecordText;
 
     [Header("Buttons of EndGame Menu")]
     [SerializeField] private ButtonUI _buttonRestart;
 
     private UIController _uiController;
+    private string _newRecord = "NEW RECORD!";
 
     private void Start()
     {
@@ -24,6 +26,17 @@ public class EndGameMenu : BaseMenu
         {
             _uiController.RestartGame();
         });
+    }
+
+    public void FinalScore(float currentScore, float bestScore)
+    {
+        if (currentScore >= bestScore)
+        {
+            bestScore = currentScore;
+            _newRecordText.SetText(_newRecord);
+        }
+        _currentScore.SetText($"Your score:{currentScore}");
+        _bestScore.SetText($"best:{bestScore}");
     }
 
     public override void Hide()
