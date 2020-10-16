@@ -32,7 +32,7 @@ public class ScoreController : MonoBehaviour
 
 		UpdateScore();
 
-		if(_score >= _numFromLastChecking + NumForBalanceChecking)
+		if (_score >= _numFromLastChecking + NumForBalanceChecking)
 		{
 			_gameController.CheckForLvlUp((int)_score);
 			_numFromLastChecking += NumForBalanceChecking;
@@ -45,9 +45,11 @@ public class ScoreController : MonoBehaviour
 		_score += AddingScore * 2 * CurrentLvl;
 		if (_score > PlayerPrefs.GetFloat("BestScore"))
 		{
-			BestScore.text = "best: " + (Mathf.Floor(_score)).ToString();
+			_bestScore = _score;
 		}
-		CurrentScore.text = (Mathf.Floor(_score)).ToString();
+
+		UpdateScore();
+
 		if (_score >= _numFromLastChecking + NumForBalanceChecking)
 		{
 			_gameController.CheckForLvlUp((int)_score);
@@ -57,9 +59,9 @@ public class ScoreController : MonoBehaviour
 	}
 	// Обновление количества очков в UI
 	public void UpdateScore()
-    {
+	{
 		_uiController.UpdateScoreUI(_score, _bestScore);
-    }
+	}
 
 	//запоминает лучший рекорд
 	public void RememberTheScore()
@@ -71,11 +73,11 @@ public class ScoreController : MonoBehaviour
 	}
 
 	public float GetCurrentScore()
-    {
+	{
 		return _score;
-    }
+	}
 	public float GetBestScore()
-    {
+	{
 		return _bestScore;
-    }
+	}
 }
