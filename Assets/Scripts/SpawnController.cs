@@ -66,11 +66,13 @@ public class SpawnController : MonoBehaviour
 				num++;
 			}
 		}
+		Debug.Log(_spawnPointsCounter[0] + " " + _spawnPointsCounter[1] + " " + _spawnPointsCounter[2]);
 		if(num == 0)
 		{
 			_spawnPointsCounter = new int[] { 1, 2, 3 };
+			//Debug.Log("new " + _spawnPointsCounter[0] + " " + _spawnPointsCounter[1] + " " + _spawnPointsCounter[2]);
 		}
-		for (int i = 0; i < 100; i++)
+		for (int i = 0; i < 10000000; i++)
 		{
 			int SelectedPoint = Random.Range(0, 3);
 			if (_spawnPointsCounter[SelectedPoint] != 0)
