@@ -10,11 +10,15 @@ public class ScoreController : MonoBehaviour
 	private float _bestScore;
 	private int _numFromLastChecking = 0;
 
+	private SoundController _soundController;
+
 	private void Start()
 	{
 		_bestScore = PlayerPrefs.GetFloat("BestScore");
 		_gameController = GetComponent<MainGameController>();
 		_uiController = FindObjectOfType<UIController>();
+
+		_soundController = FindObjectOfType<SoundController>();
 	}
 	//добавляет очки за уничтожение блока лазером
 	public void AddScore(float AddingScore)
@@ -52,6 +56,7 @@ public class ScoreController : MonoBehaviour
 			_numFromLastChecking += NumForBalanceChecking;
 		}
 
+		_soundController.PlayLineExplode();
 	}
 	// Обновление количества очков в UI
 	public void UpdateScore()
