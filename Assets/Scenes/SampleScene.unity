@@ -4764,7 +4764,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New REcord
+  m_Text: New Record
 --- !u!222 &1948004528
 CanvasRenderer:
   m_ObjectHideFlags: 0
