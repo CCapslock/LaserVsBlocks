@@ -2338,7 +2338,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39deac2af3cfed94a9d60d053deceb5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 0.03
+  Speed: 0.039
 --- !u!114 &964961366
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2503,8 +2503,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dab69965e77a08a46b464ce82e217510, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrentScore: {fileID: 0}
-  BestScore: {fileID: 0}
   NumForBalanceChecking: 501
   CurrentLvl: 0
 --- !u!114 &964961369
@@ -2520,8 +2518,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlaceAbleObjectPrefab: {fileID: 8423017964421520096, guid: f11c3fdcc602a214fbbcc9d3f0a0735d,
-    type: 3}
-  PlaceAbleObjectPrefabForTesting: {fileID: 8423017964421520096, guid: a7da921108affc544b3f124a2fd714e7,
     type: 3}
   SingleBlockPrefab: {fileID: 7112654784045263347, guid: e6889b89f269e7c4a8ceee19baccc3a6,
     type: 3}
