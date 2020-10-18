@@ -30,7 +30,6 @@ public class ScoreController : MonoBehaviour
 			_bestScore = _score;
 		}
 
-		UpdateScore();
 
 		if(_score >= _numFromLastChecking + NumForBalanceChecking)
 		{
@@ -47,7 +46,7 @@ public class ScoreController : MonoBehaviour
 		{
 			BestScore.text = "best: " + (Mathf.Floor(_score)).ToString();
 		}
-		CurrentScore.text = (Mathf.Floor(_score)).ToString();
+		UpdateScore();
 		if (_score >= _numFromLastChecking + NumForBalanceChecking)
 		{
 			_gameController.CheckForLvlUp((int)_score);
