@@ -23,6 +23,7 @@ public class MainGameController : MonoBehaviour
 
 	private void Awake()
 	{
+		//PlayerPrefs.SetFloat("BestScore", 2);
 		_sceneCreator = GetComponent<SceneCreator>();
 		_spawnController = GetComponent<SpawnController>();
 		_blocksMovementController = GetComponent<SingleBlocksMovementController>();
@@ -92,6 +93,7 @@ public class MainGameController : MonoBehaviour
 	{
 		if (_gameField.IsPlayerFail())
 		{
+			_scoreController.RememberTheScore();
 			_uiController.EndGame(Mathf.Floor(_scoreController.GetCurrentScore()), Mathf.Floor(_scoreController.GetBestScore()));
 		}
 	}
