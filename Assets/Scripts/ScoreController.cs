@@ -1,10 +1,6 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
-
 public class ScoreController : MonoBehaviour
 {
-	public Text CurrentScore;
-	public Text BestScore;
 	public int NumForBalanceChecking;
 	public int CurrentLvl = 0;
 
@@ -14,11 +10,15 @@ public class ScoreController : MonoBehaviour
 	private float _bestScore;
 	private int _numFromLastChecking = 0;
 
+	private SoundController _soundController;
+
 	private void Start()
 	{
 		_bestScore = PlayerPrefs.GetFloat("BestScore");
 		_gameController = GetComponent<MainGameController>();
 		_uiController = FindObjectOfType<UIController>();
+
+		_soundController = FindObjectOfType<SoundController>();
 	}
 	//добавляет очки за уничтожение блока лазером
 	public void AddScore(float AddingScore)
@@ -32,7 +32,7 @@ public class ScoreController : MonoBehaviour
 
 		UpdateScore();
 
-		if(_score >= _numFromLastChecking + NumForBalanceChecking)
+		if (_score >= _numFromLastChecking + NumForBalanceChecking)
 		{
 			_gameController.CheckForLvlUp((int)_score);
 			_numFromLastChecking += NumForBalanceChecking;
@@ -45,21 +45,24 @@ public class ScoreController : MonoBehaviour
 		_score += AddingScore * 2 * CurrentLvl;
 		if (_score > PlayerPrefs.GetFloat("BestScore"))
 		{
-			BestScore.text = "best: " + (Mathf.Floor(_score)).ToString();
+			_bestScore = _score;
 		}
-		CurrentScore.text = (Mathf.Floor(_score)).ToString();
+
+		UpdateScore();
+
 		if (_score >= _numFromLastChecking + NumForBalanceChecking)
 		{
 			_gameController.CheckForLvlUp((int)_score);
 			_numFromLastChecking += NumForBalanceChecking;
 		}
 
+		_soundController.PlayLineExplode();
 	}
 	// Обновление количества очков в UI
 	public void UpdateScore()
-    {
+	{
 		_uiController.UpdateScoreUI(_score, _bestScore);
-    }
+	}
 
 	//запоминает лучший рекорд
 	public void RememberTheScore()
@@ -71,11 +74,11 @@ public class ScoreController : MonoBehaviour
 	}
 
 	public float GetCurrentScore()
-    {
+	{
 		return _score;
-    }
+	}
 	public float GetBestScore()
-    {
+	{
 		return _bestScore;
-    }
+	}
 }

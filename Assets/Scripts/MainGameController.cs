@@ -92,6 +92,7 @@ public class MainGameController : MonoBehaviour
 	{
 		if (_gameField.IsPlayerFail())
 		{
+			_scoreController.RememberTheScore();
 			_uiController.EndGame(Mathf.Floor(_scoreController.GetCurrentScore()), Mathf.Floor(_scoreController.GetBestScore()));
 		}
 	}
