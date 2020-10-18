@@ -44,7 +44,7 @@ public class ScoreController : MonoBehaviour
 		_score += AddingScore * 2 * CurrentLvl;
 		if (_score > PlayerPrefs.GetFloat("BestScore"))
 		{
-			BestScore.text = "best: " + (Mathf.Floor(_score)).ToString();
+			_bestScore = _score;
 		}
 		UpdateScore();
 		if (_score >= _numFromLastChecking + NumForBalanceChecking)

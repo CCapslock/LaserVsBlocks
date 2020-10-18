@@ -25,7 +25,7 @@ public class SceneCreator : MonoBehaviour
 		float xnum = _widht / (_column + 1);
 		float ynum = _hight / (_row + 1);
 		SpriteRenderer PlaceAbleBlockSprite = PlaceAbleObjectPrefab.GetComponent<SpriteRenderer>();
-		Debug.Log("PlaceAbleBlock Size: " + PlaceAbleBlockSprite.sprite.textureRect.size.y + "Screen Hight: " + _maxScreenPosition.y);
+		Debug.Log("PlaceAbleBlock Size: " + PlaceAbleBlockSprite.sprite.bounds.size.y * PlaceAbleObjectPrefab.transform.localScale.y + " Screen Hight: " + _maxScreenPosition.y);
 		for (int i = 1; i <= Row; i++)
 		{
 			for (int j = 1; j <= Column; j++)
