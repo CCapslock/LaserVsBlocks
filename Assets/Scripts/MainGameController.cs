@@ -23,7 +23,6 @@ public class MainGameController : MonoBehaviour
 
 	private void Awake()
 	{
-		//PlayerPrefs.SetFloat("BestScore", 2);
 		_sceneCreator = GetComponent<SceneCreator>();
 		_spawnController = GetComponent<SpawnController>();
 		_blocksMovementController = GetComponent<SingleBlocksMovementController>();

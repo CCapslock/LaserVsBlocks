@@ -1,10 +1,6 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
-
 public class ScoreController : MonoBehaviour
 {
-	public Text CurrentScore;
-	public Text BestScore;
 	public int NumForBalanceChecking;
 	public int CurrentLvl = 0;
 
