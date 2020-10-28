@@ -19,7 +19,7 @@ public class LaserController : MonoBehaviour
 	private void Start()
 	{
 		_objectTransform = GetComponent<Transform>();
-		_laserScale = new Vector3(1f, 0, 0);
+		_laserScale = new Vector3(1.5f, 0, 0);
 		_laserPosition = new Vector3();
 		_highGlowLaserEffectsPosition = new Vector2();
 		TurnEffectsOn(false);
