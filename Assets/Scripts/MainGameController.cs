@@ -111,6 +111,7 @@ public class MainGameController : MonoBehaviour
 	public void SetCorrectBalance()
 	{
 		_scoreController.CurrentLvl = _balanceController.GetCurrentLvlNum() + 1;
+		_gameField.CurrentLvl = _balanceController.GetCurrentLvlNum() + 1;
 		_spawnController.SetBlockPatterns(_balanceController.GetFigures());
 		_spawnController.SetHpRange(_balanceController.GetMinHp(), _balanceController.GetMaxHp());
 	}
