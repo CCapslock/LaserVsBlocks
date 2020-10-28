@@ -8,7 +8,7 @@ public class GameField : MonoBehaviour
 	private MainGameController _gameController;
 	private int _column = 7;
 	private int _row = 15;
-	private int _maxRow = 15;
+	private int _minRow = 15;
 
 	private void Start()
 	{
@@ -67,7 +67,7 @@ public class GameField : MonoBehaviour
 	public void CheckForConnection()
 	{
 		bool GotLine = false;
-		_maxRow = 0;
+		_minRow = 0;
 		//Check Horizontal Lines
 		for (int i = 0; i < _row; i++)
 		{
@@ -78,7 +78,10 @@ public class GameField : MonoBehaviour
 					Counter++;
 				if (Counter == _column)
 				{
-					_maxRow = i;
+					if(_minRow == 0)
+					{
+						_minRow = i;
+					}
 					for (int m = 0; m < _column; m++)
 					{
 						GameFieldBlocksForDestruction[i, m] = GameFieldBlocks[i, m];
@@ -88,7 +91,7 @@ public class GameField : MonoBehaviour
 
 			}
 		}
-		int PointsCounter = 0;
+		float PointsCounter = 0;
 		if (GotLine)
 		{
 			for (int m = 0; m < _column; m++)
@@ -97,14 +100,14 @@ public class GameField : MonoBehaviour
 				{
 					if (GameFieldBlocksForDestruction[i, m] != null)
 					{
-						PointsCounter++;
+						PointsCounter += GameFieldBlocksForDestruction[i, m].PlacedBlock.HealthPoints;
 						GameFieldBlocksForDestruction[i, m].PlacedBlock.DestroyBlock();
 						GameFieldBlocksForDestruction[i, m].SetFree();
 						GameFieldBlocksForDestruction[i, m] = null;
 					}
 				}
 			}
-			_gameController.AddScore(PointsCounter * 30);
+			_gameController.AddScore(PointsCounter, true);
 			ActivateSingleBlocks();
 		}
 	}
@@ -131,7 +134,7 @@ public class GameField : MonoBehaviour
 	private void ActivateSingleBlocks()
 	{
 		int counter = 0;
-		for (int m = _maxRow; m < _row; m++)
+		for (int m = _minRow; m < _row; m++)
 		{
 			for (int i = 0; i < _column; i++)
 			{

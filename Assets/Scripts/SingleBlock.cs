@@ -25,6 +25,8 @@ public class SingleBlock : MonoBehaviour
 	private Vector2 _destroyPosition;
 	private bool CanGetDamage = true;
 
+	private SoundController _soundController;
+
 	private void Awake()
 	{
 		BlockTransform = GetComponent<Transform>();
@@ -36,6 +38,8 @@ public class SingleBlock : MonoBehaviour
 		_gameController = FindObjectOfType<MainGameController>();
 		_destroyPosition = new Vector2();
 		DestroyParticle.Stop();
+
+		_soundController = FindObjectOfType<SoundController>();
 	}
 	private void OnTriggerEnter2D(Collider2D other)
 	{
@@ -79,7 +83,7 @@ public class SingleBlock : MonoBehaviour
 		}
 		else
 		{
-			_gameController.RestartGame();
+			_gameController.CheckForSpawning();
 		}
 
 	}
@@ -149,7 +153,7 @@ public class SingleBlock : MonoBehaviour
 		if (CanGetDamage)
 		{
 			HealthPoints -= LaserPower;
-			_gameController.AddScore(0.4f);
+			_gameController.AddScore(0.4f, false);
 			if (HealthPoints <= 1)
 			{
 				DestroyBlock();
@@ -168,6 +172,9 @@ public class SingleBlock : MonoBehaviour
 		CanMove = false;
 		_gameController.ReturnBlockIntoPool(this.gameObject);
 		_gameController.CheckForSpawning();
+
+		_soundController.PlaySingleExplode();
+
 		Invoke("PlayDestroyParticles", 0.1f);
 		//Destroy(this.gameObject);
 	}

@@ -12,12 +12,12 @@ GameObject:
   - component: {fileID: 5188047257269436984}
   - component: {fileID: 6435050191445899836}
   m_Layer: 0
-  m_Name: Particle System
+  m_Name: LaserParticles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5342552727819930671
 Transform:
   m_ObjectHideFlags: 0
@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5317103698303804533}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -1.0388108, y: -3.0742714, z: -0.93559563}
+  m_LocalPosition: {x: -0.4111838, y: -1.8332253, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
