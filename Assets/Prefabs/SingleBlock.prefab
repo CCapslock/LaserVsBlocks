@@ -359,8 +359,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BlockGlow: {fileID: 2933498005850846397}
-  PopingOutScore: {fileID: 3263782923117009480, guid: 71e13dea3c625b24dbbf63c2f9552ced,
-    type: 3}
   BlockTransform: {fileID: 0}
   HealthGradient:
     serializedVersion: 2
@@ -398,7 +396,7 @@ MonoBehaviour:
   MaxHealthPoint: 0
   HealthPoints: 50
   SideRaycastLength: 0.6
-  LaserPower: 0.4
+  LaserPower: 0.44
   CanMove: 0
 --- !u!61 &7112654784045263350
 BoxCollider2D:

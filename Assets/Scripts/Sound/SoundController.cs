@@ -4,17 +4,26 @@ public class SoundController : MonoBehaviour
 {
 	[SerializeField] private AudioSource _audioSourceSingle;
 	[SerializeField] private AudioSource _audioSourceLine;
+	[SerializeField] private AudioSource _audioSourceMusic;
+	[SerializeField] private AudioSource _audioSourceButtonClick;
 	public bool SoundOn;
 
+	private void Start()
+	{
+		PlayMusic();
+	}
 	public void ChangeSoundBool()
 	{
 		if (SoundOn)
 		{
 			SoundOn = false;
+			_audioSourceMusic.Stop();
 		}
 		else
 		{
 			SoundOn = true;
+			PlayButtonClick();
+			PlayMusic();
 		}
 	}
 	public void PlaySingleExplode()
@@ -30,6 +39,20 @@ public class SoundController : MonoBehaviour
 		if (SoundOn)
 		{
 			_audioSourceLine.PlayOneShot(_audioSourceLine.clip);
+		}
+	}
+	public void PlayButtonClick()
+	{
+		if (SoundOn)
+		{
+			_audioSourceButtonClick.PlayOneShot(_audioSourceButtonClick.clip);
+		}
+	}
+	public void PlayMusic()
+	{
+		if (SoundOn)
+		{
+			_audioSourceMusic.Play();
 		}
 	}
 }
