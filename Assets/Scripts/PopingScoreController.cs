@@ -9,7 +9,7 @@ public class PopingScoreController : MonoBehaviour
 	public float SpeedOfMovingUp;
 	public float TimeOfShowingScore;
 
-	private Text[] _scoreText;
+	[SerializeField] private Text[] _scoreText;
 	private Vector3 _popingPoint;
 	private Vector3 _outVector;
 	private Transform _scoreObjectTRansform;
@@ -17,14 +17,19 @@ public class PopingScoreController : MonoBehaviour
 
 	private void Start()
 	{
-		
+		_outVector = new Vector2(0, -10f);
+		_popingPoint = new Vector2();
+		_scoreObjectTRansform = PopingOutScore.transform;
+		_scoreText = PopingOutScore.GetComponentsInChildren<Text>(); for (int i = 0; i < 2; i++)
+		{
+			_scoreText[i].text = (math.round(50f)).ToString();
+		}
 	}
 	public void PopScore(float YCoordinat, float Score)
 	{
+		PopingOutScore.SetActive(true);
 		_popingPoint.y = YCoordinat;
-		PopingOutScore.transform.position = _popingPoint;
-		_scoreObjectTRansform = PopingOutScore.transform;
-		_scoreText = PopingOutScore.GetComponentsInChildren<Text>();
+		_scoreObjectTRansform.position = _popingPoint;
 		for (int i = 0; i < 2; i++)
 		{
 			_scoreText[i].text = (math.round(Score)).ToString();
@@ -43,6 +48,15 @@ public class PopingScoreController : MonoBehaviour
 	}
 	private void DestroyPopedScore()
 	{
+		_scoreObjectTRansform.position = _outVector;
 		_needToMoveUp = false;
+		Invoke("SetObjectNonActive", 1f);
+	}
+	private void SetObjectNonActive()
+	{
+		if (!_needToMoveUp)
+		{
+			PopingOutScore.SetActive(false);
+		}
 	}
 }
