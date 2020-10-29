@@ -1476,7 +1476,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!108 &712242959
 Light:
   m_ObjectHideFlags: 0
@@ -2299,6 +2299,7 @@ GameObject:
   - component: {fileID: 964961369}
   - component: {fileID: 964961370}
   - component: {fileID: 964961371}
+  - component: {fileID: 964961372}
   m_Layer: 0
   m_Name: Controllers
   m_TagString: Untagged
@@ -2613,6 +2614,31 @@ MonoBehaviour:
     type: 3}
   SpeedOfMovingUp: 0.03
   TimeOfShowingScore: 1.5
+--- !u!114 &964961372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 964961362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9c2367ad4c6c284bb48052d6b037aa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StarsMovingSpeeds:
+  - 0.06
+  - 0.04
+  - 0.02
+  - 0.01
+  FirstLayer: {fileID: 5586815106118187460, guid: 731e79ed573a90f4e86dec83fc5a7fc4,
+    type: 3}
+  SecondLayer: {fileID: 7677600082048531705, guid: 63de3c59a486d5944a74b4860e73be61,
+    type: 3}
+  ThirdLayer: {fileID: 2346102615131783075, guid: 9dc37d5b9da699e4b9837aa735626c07,
+    type: 3}
+  FourthLayer: {fileID: 3658294230078461983, guid: 38efb0f96d468794fa96564f5153273f,
+    type: 3}
 --- !u!1 &1022818123
 GameObject:
   m_ObjectHideFlags: 0
