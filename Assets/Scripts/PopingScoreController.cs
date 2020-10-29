@@ -5,27 +5,33 @@ using UnityEngine.UI;
 public class PopingScoreController : MonoBehaviour
 {
 	public GameObject PopingOutScore;
+	public Animator AnimatorController;
 	public float SpeedOfMovingUp;
 	public float TimeOfShowingScore;
 
 	private Text[] _scoreText;
 	private Vector3 _popingPoint;
+	private Vector3 _outVector;
 	private Transform _scoreObjectTRansform;
 	private bool _needToMoveUp;
 
+	private void Start()
+	{
+		
+	}
 	public void PopScore(float YCoordinat, float Score)
 	{
 		_popingPoint.y = YCoordinat;
-
-		GameObject ScoreObject = Instantiate(PopingOutScore, _popingPoint, Quaternion.identity);
-		_scoreObjectTRansform = ScoreObject.transform;
-		_scoreText = ScoreObject.GetComponentsInChildren<Text>();
+		PopingOutScore.transform.position = _popingPoint;
+		_scoreObjectTRansform = PopingOutScore.transform;
+		_scoreText = PopingOutScore.GetComponentsInChildren<Text>();
 		for (int i = 0; i < 2; i++)
 		{
 			_scoreText[i].text = (math.round(Score)).ToString();
 		}
-		Invoke("DestroyPopedScore", TimeOfShowingScore);
+		AnimatorController.SetTrigger("Pop");
 		_needToMoveUp = true;
+		Invoke("DestroyPopedScore", TimeOfShowingScore);
 	}
 	private void FixedUpdate()
 	{
@@ -38,6 +44,5 @@ public class PopingScoreController : MonoBehaviour
 	private void DestroyPopedScore()
 	{
 		_needToMoveUp = false;
-		Destroy(_scoreObjectTRansform.gameObject);
 	}
 }
