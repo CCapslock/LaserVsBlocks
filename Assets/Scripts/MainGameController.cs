@@ -51,6 +51,7 @@ public class MainGameController : MonoBehaviour
 		_spawnController.GlobalMaxHp = CurrentBalancePreset.GlobalMaxHp;
 		_spawnController.CurrentGradient = _artController.GetCurrentGradient();
 		_spawnController.CreatePoolOfSingleBlocks();
+		_spawnController.CreatePatterns();
 	}
 	private void Start()
 	{
