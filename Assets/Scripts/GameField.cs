@@ -2,10 +2,14 @@
 
 public class GameField : MonoBehaviour
 {
+	public int CurrentLvl;
+
 	private PlaceAbleBlock[] _blocksOnScene;
 	private PlaceAbleBlock[,] GameFieldBlocks;
 	private PlaceAbleBlock[,] GameFieldBlocksForDestruction;
 	private MainGameController _gameController;
+	private PopingScoreController _popingController;
+	private float _destroyingLineYCoordinat; 
 	private int _column = 7;
 	private int _row = 15;
 	private int _minRow = 15;
@@ -13,6 +17,7 @@ public class GameField : MonoBehaviour
 	private void Start()
 	{
 		_gameController = GetComponent<MainGameController>();
+		_popingController = FindObjectOfType<PopingScoreController>();
 		GameFieldBlocksForDestruction = new PlaceAbleBlock[_row, _column]; 
 	}
 	//конвертирует ячейки на поле в двумерный массив 
@@ -101,6 +106,7 @@ public class GameField : MonoBehaviour
 					if (GameFieldBlocksForDestruction[i, m] != null)
 					{
 						PointsCounter += GameFieldBlocksForDestruction[i, m].PlacedBlock.HealthPoints;
+						_destroyingLineYCoordinat = GameFieldBlocksForDestruction[i, m].PlacedBlock.BlockTransform.position.y;
 						GameFieldBlocksForDestruction[i, m].PlacedBlock.DestroyBlock();
 						GameFieldBlocksForDestruction[i, m].SetFree();
 						GameFieldBlocksForDestruction[i, m] = null;
@@ -108,6 +114,7 @@ public class GameField : MonoBehaviour
 				}
 			}
 			_gameController.AddScore(PointsCounter, true);
+			_popingController.PopScore(_destroyingLineYCoordinat, PointsCounter * 2 * CurrentLvl);
 			ActivateSingleBlocks();
 		}
 	}
