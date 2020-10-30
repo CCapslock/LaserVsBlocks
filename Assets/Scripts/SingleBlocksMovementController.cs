@@ -40,7 +40,7 @@ public class SingleBlocksMovementController : MonoBehaviour
 	{
 		for (int i = 0; i < _singleBlocks.Length; i++)
 		{
-			if (_singleBlocks[i] != null && _singleBlocks[i].CanMove)
+			if (_singleBlocks[i].CanMove)
 			{
 				_movingVector = _singleBlockTransforms[i].position;
 				_movingVector.y -= Speed;
