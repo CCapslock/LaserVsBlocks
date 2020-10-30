@@ -7,6 +7,7 @@ public class SoundController : MonoBehaviour
 	[SerializeField] private AudioSource _audioSourceMusic;
 	[SerializeField] private AudioSource _audioSourceButtonClick;
 	public bool SoundOn;
+	public bool MusicOn;
 
 	private void Start()
 	{
@@ -22,6 +23,19 @@ public class SoundController : MonoBehaviour
 		else
 		{
 			SoundOn = true;
+			PlayButtonClick();
+		}
+	}
+	public void ChangeMusicBool()
+	{
+		if (MusicOn)
+		{
+			MusicOn = false;
+			_audioSourceMusic.Stop();
+		}
+		else
+		{
+			MusicOn = true;
 			PlayButtonClick();
 			PlayMusic();
 		}
@@ -50,7 +64,7 @@ public class SoundController : MonoBehaviour
 	}
 	public void PlayMusic()
 	{
-		if (SoundOn)
+		if (MusicOn)
 		{
 			_audioSourceMusic.Play();
 		}
