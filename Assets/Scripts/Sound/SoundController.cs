@@ -18,7 +18,6 @@ public class SoundController : MonoBehaviour
 		if (SoundOn)
 		{
 			SoundOn = false;
-			_audioSourceMusic.Stop();
 		}
 		else
 		{
@@ -32,6 +31,7 @@ public class SoundController : MonoBehaviour
 		{
 			MusicOn = false;
 			_audioSourceMusic.Stop();
+			PlayButtonClick();
 		}
 		else
 		{
