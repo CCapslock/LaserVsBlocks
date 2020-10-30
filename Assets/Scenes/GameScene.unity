@@ -531,7 +531,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4464613669252742, guid: 0b960778462d34f7283156e4edafb7a2, type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4464613669252742, guid: 0b960778462d34f7283156e4edafb7a2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2685,8 +2685,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StarsMovingSpeeds:
-  - 0.06
   - 0.04
+  - 0.03
   - 0.02
   - 0.01
   FirstLayer: {fileID: 5586815106118187460, guid: 731e79ed573a90f4e86dec83fc5a7fc4,
