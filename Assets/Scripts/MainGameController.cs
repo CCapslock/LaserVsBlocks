@@ -65,6 +65,9 @@ public class MainGameController : MonoBehaviour
     {
 		SpawnFigure();
 		_scoreController.UpdateScore();
+
+		// Analytics
+		TinySauce.OnGameStarted();
     }
 	//проверяет нужно ли спавнить фигуру
 	public void CheckForSpawning()
@@ -95,11 +98,17 @@ public class MainGameController : MonoBehaviour
 		{
 			_scoreController.RememberTheScore();
 			_uiController.EndGame(Mathf.Floor(_scoreController.GetCurrentScore()), Mathf.Floor(_scoreController.GetBestScore()));
+			
+			// Analytics
+			TinySauce.OnGameFinished(_scoreController.GetCurrentScore());
 		}
 	}
 	//перезапускает игру
 	public void RestartGame()
 	{
+		// Analytics
+		TinySauce.OnGameFinished(_scoreController.GetCurrentScore());
+
 		_scoreController.RememberTheScore();
 		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 	}
